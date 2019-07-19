@@ -1,0 +1,249 @@
+/* pages/goodsdetail/index.wxss */
+/* zhanwei */
+.zhanwei{
+  width: 750rpx;
+  background: #f5f5f5;
+  height: 20rpx;
+}
+
+
+/* 轮播 */
+.swiperContent{
+  width: 750rpx;
+  height: 750rpx;
+}
+.slide-image{
+  width: 750rpx;
+  height: 750rpx;
+}
+/* 商品名称 */
+.name{
+  width: 750rpx;
+  box-sizing: border-box;
+  margin-top: 30rpx;
+  padding: 0 26rpx;
+  font-size:32rpx;
+/* font-family:PingFang-SC-Medium; */
+  font-weight:500;
+  color:rgba(51,51,51,1);
+  line-height:40rpx;
+}
+.jianjie{
+  width: 750rpx;
+  box-sizing: border-box;
+  margin-top: 0rpx;
+  padding: 0 26rpx;
+  font-size:26rpx;
+/* font-family:PingFang-SC-Medium; */
+  font-weight:500;
+  color:#999;
+  
+}
+
+/* 价格 */
+.money{
+  width: 750rpx;
+  box-sizing: border-box;
+  margin-top: 0rpx;
+  padding: 0 26rpx;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 10rpx;
+}
+.money_v1 .t1{
+  font-size:48rpx;
+font-family:PingFang-SC-Medium;
+font-weight:bold;
+color:rgba(241,48,46,1);
+}
+.money_v1 .t2{
+  font-size:26rpx;
+font-family:PingFang-SC-Medium;
+font-weight:500;
+color:rgba(194,194,194,1);
+text-decoration:line-through;
+}
+.money_v2 text{
+  font-size:24rpx;
+font-family:PingFang-SC-Medium;
+font-weight:500;
+color:rgba(153,153,153,1);
+}
+
+/* 商品参数 */
+.canshu{
+   width: 750rpx;
+  box-sizing: border-box;
+  margin-top: 0rpx;
+  padding: 30rpx 26rpx;
+  font-size:28rpx;
+font-family:PingFang-SC-Medium;
+font-weight:500;
+color:rgba(51,51,51,1);
+line-height: 28rpx;
+}
+.canshu .t2{
+  color: #999;
+}
+
+/* 评价 */
+.pingjia{
+  width: 750rpx;
+  box-sizing: border-box;
+  margin-top: 0rpx;
+  padding: 0rpx 26rpx;
+}
+.pingjia .pingjia_header{
+  width: 100%;
+  box-sizing: border-box;
+  display: flex;
+  height: 90rpx;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1rpx solid #eee;
+}
+.pingjia .pingjia_header image{
+  width: 16rpx;
+  height: 28rpx;
+}
+.pingjia_item{
+  width: 100%;
+  box-sizing: border-box;
+  padding-bottom: 20rpx;
+  border-bottom: 1rpx solid #eee;
+}
+.pingjia_item .pingjia_item_top{
+  width: 100%;
+  height: 106rpx;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+}
+.pingjia_item .pingjia_item_top_img{
+  width: 66rpx;
+  height: 66rpx;
+}
+.pingjia_item .pingjia_item_top_phone{
+  width: 0;
+  flex: 1;
+  box-sizing: border-box;
+  padding-left: 16rpx;
+  font-size:30rpx;
+  font-family:PingFang-SC-Medium;
+  font-weight:500;
+  color:rgba(194,194,194,1);
+}
+.pingjia_item .pingjia_item_bottom{
+  font-size:24rpx;
+font-family:PingFang-SC-Medium;
+font-weight:500;
+color:rgba(102,102,102,1);
+}
+
+/* 宝贝详情 */
+.goods{
+  width: 750rpx;
+  background: #F5F5F5;
+  padding-bottom: 100rpx;
+}
+.goods .goods_header{
+  width: 100%;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size:28rpx;
+font-family:PingFang-SC-Medium;
+font-weight:500;
+color:rgba(148,148,148,1);
+height: 100rpx;
+}
+.goods .baobei_img{
+  width: 750rpx;
+  margin: 0;
+  padding: 0;
+  display: block;
+  
+}
+
+/* 底部导航 */
+.foot{
+  position: fixed;
+  bottom: 0;
+  width: 750rpx;
+  height: 98rpx;
+  display: flex;
+  align-items: stretch;
+  justify-content: space-between;
+  box-sizing: border-box;
+  background: #fff;
+}
+.foot1{
+  display: flex;
+  width: 0;
+  flex: 1;
+  align-items: center;
+  justify-content: space-around;
+}
+.foot1_list{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+}
+.foot1_list image{
+  width: 40rpx;
+  height: 40rpx;
+}
+.foot1_list .foot1_list_v1{
+  font-size:20rpx;
+font-family:PingFang-SC-Medium;
+font-weight:500;
+color:rgba(51,51,51,1);
+line-height: 20rpx;
+margin-top: 10rpx;
+}
+.foot1_list .foot1_list_v2{
+  position: absolute;
+  font-size:18rpx;
+font-family:PingFang-SC-Medium;
+font-weight:500;
+color:rgba(255,255,255,1);
+width: 28rpx;
+height: 28rpx;
+background: #F1302E;
+border-radius: 14rpx;
+text-align: center;
+line-height: 28rpx;
+right: -10rpx;
+top: -10rpx;
+}
+
+.foot2{
+  width:235rpx;
+height:98rpx;
+background:rgba(255,148,4,1);
+display: flex;
+align-items: center;
+justify-content: center;
+font-size:32rpx;
+font-family:PingFang-SC-Medium;
+font-weight:500;
+color:rgba(255,255,255,1);
+line-height: 32rpx;
+}
+.foot3{
+  width:235rpx;
+height:98rpx;
+background:rgba(241,48,46,1);
+display: flex;
+align-items: center;
+justify-content: center;
+font-size:32rpx;
+font-family:PingFang-SC-Medium;
+font-weight:500;
+color:rgba(255,255,255,1);
+line-height: 32rpx;
+}

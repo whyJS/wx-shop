@@ -1,0 +1,2 @@
+<!--pages/rank/rank.wxml-->
+<button bind:tap="onSearch">排行榜</button>

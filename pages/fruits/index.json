@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "果蔬食品",
+  "usingComponents": {
+    "v-search": "/components/search/search",
+    "v-bottom": "/components/bottom/bottom"
+  }
+}

@@ -1,0 +1,188 @@
+<!--pages/address-list/index.wxml-->
+<view class="addressList">
+  <view class="addressListTop">
+    <view class="addressListTopTitle">贵州省安顺市关岭布依族自治县高老庄-猪八戒背媳妇之处高老庄</view>
+    <view class="addressListTopUser">
+      <text class="addressListTopUserName">孙金柱</text>
+      <text class="addressListTopUserPhone">150****5561</text>
+    </view>
+  </view>
+
+  <view class="addressListTopBottom">
+    <!-- <view class="addressListTopBottomV1">
+      <image src="/images/icon/btn2.png"></image>
+      <view>默认地址</view>
+    </view> -->
+    <view class="addressListTopBottomV3">
+      <image src="/images/icon/btn1.png"></image>
+      <view>设置默认地址</view>
+    </view>
+    <view class="addressListTopBottomV2">
+      <view class="addressListTopBottomV2BianJi">
+        <image src="/images/icon/xiugai.png"></image>
+        <view>编辑</view>
+      </view>
+      <view class="addressListTopBottomV2Delete">
+        <image src="/images/icon/shanchu.png"></image>
+        <view>删除</view>
+      </view>
+    </view>
+  </view>
+</view>
+<view class="addressList">
+  <view class="addressListTop">
+    <view class="addressListTopTitle">贵州省安顺市关岭布依族自治县高老庄-猪八戒背媳妇之处高老庄</view>
+    <view class="addressListTopUser">
+      <text class="addressListTopUserName">孙金柱</text>
+      <text class="addressListTopUserPhone">150****5561</text>
+    </view>
+  </view>
+
+  <view class="addressListTopBottom">
+    <view class="addressListTopBottomV1">
+      <image src="/images/icon/btn2.png"></image>
+      <view>默认地址</view>
+    </view>
+    <!-- <view class="addressListTopBottomV3">
+      <image src="/images/icon/btn1.png"></image>
+      <view>设置默认地址</view>
+    </view> -->
+    <view class="addressListTopBottomV2">
+      <view class="addressListTopBottomV2BianJi">
+        <image src="/images/icon/xiugai.png"></image>
+        <view>编辑</view>
+      </view>
+      <view class="addressListTopBottomV2Delete">
+        <image src="/images/icon/shanchu.png"></image>
+        <view>删除</view>
+      </view>
+    </view>
+  </view>
+</view>
+<view class="addressList">
+  <view class="addressListTop">
+    <view class="addressListTopTitle">贵州省安顺市关岭布依族自治县高老庄-猪八戒背媳妇之处高老庄</view>
+    <view class="addressListTopUser">
+      <text class="addressListTopUserName">孙金柱</text>
+      <text class="addressListTopUserPhone">150****5561</text>
+    </view>
+  </view>
+
+  <view class="addressListTopBottom">
+    <!-- <view class="addressListTopBottomV1">
+      <image src="/images/icon/btn2.png"></image>
+      <view>默认地址</view>
+    </view> -->
+    <view class="addressListTopBottomV3">
+      <image src="/images/icon/btn1.png"></image>
+      <view>设置默认地址</view>
+    </view>
+    <view class="addressListTopBottomV2">
+      <view class="addressListTopBottomV2BianJi">
+        <image src="/images/icon/xiugai.png"></image>
+        <view>编辑</view>
+      </view>
+      <view class="addressListTopBottomV2Delete">
+        <image src="/images/icon/shanchu.png"></image>
+        <view>删除</view>
+      </view>
+    </view>
+  </view>
+</view>
+<view class="addressList">
+  <view class="addressListTop">
+    <view class="addressListTopTitle">贵州省安顺市关岭布依族自治县高老庄-猪八戒背媳妇之处高老庄</view>
+    <view class="addressListTopUser">
+      <text class="addressListTopUserName">孙金柱</text>
+      <text class="addressListTopUserPhone">150****5561</text>
+    </view>
+  </view>
+
+  <view class="addressListTopBottom">
+    <!-- <view class="addressListTopBottomV1">
+      <image src="/images/icon/btn2.png"></image>
+      <view>默认地址</view>
+    </view> -->
+    <view class="addressListTopBottomV3">
+      <image src="/images/icon/btn1.png"></image>
+      <view>设置默认地址</view>
+    </view>
+    <view class="addressListTopBottomV2">
+      <view class="addressListTopBottomV2BianJi">
+        <image src="/images/icon/xiugai.png"></image>
+        <view>编辑</view>
+      </view>
+      <view class="addressListTopBottomV2Delete">
+        <image src="/images/icon/shanchu.png"></image>
+        <view>删除</view>
+      </view>
+    </view>
+  </view>
+</view>
+<view class="addressList">
+  <view class="addressListTop">
+    <view class="addressListTopTitle">贵州省安顺市关岭布依族自治县高老庄-猪八戒背媳妇之处高老庄</view>
+    <view class="addressListTopUser">
+      <text class="addressListTopUserName">孙金柱</text>
+      <text class="addressListTopUserPhone">150****5561</text>
+    </view>
+  </view>
+
+  <view class="addressListTopBottom">
+    <!-- <view class="addressListTopBottomV1">
+      <image src="/images/icon/btn2.png"></image>
+      <view>默认地址</view>
+    </view> -->
+    <view class="addressListTopBottomV3">
+      <image src="/images/icon/btn1.png"></image>
+      <view>设置默认地址</view>
+    </view>
+    <view class="addressListTopBottomV2">
+      <view class="addressListTopBottomV2BianJi">
+        <image src="/images/icon/xiugai.png"></image>
+        <view>编辑</view>
+      </view>
+      <view class="addressListTopBottomV2Delete">
+        <image src="/images/icon/shanchu.png"></image>
+        <view>删除</view>
+      </view>
+    </view>
+  </view>
+</view>
+<view class="addressList">
+  <view class="addressListTop">
+    <view class="addressListTopTitle">贵州省安顺市关岭布依族自治县高老庄-猪八戒背媳妇之处高老庄</view>
+    <view class="addressListTopUser">
+      <text class="addressListTopUserName">孙金柱</text>
+      <text class="addressListTopUserPhone">150****5561</text>
+    </view>
+  </view>
+
+  <view class="addressListTopBottom">
+    <!-- <view class="addressListTopBottomV1">
+      <image src="/images/icon/btn2.png"></image>
+      <view>默认地址</view>
+    </view> -->
+    <view class="addressListTopBottomV3">
+      <image src="/images/icon/btn1.png"></image>
+      <view>设置默认地址</view>
+    </view>
+    <view class="addressListTopBottomV2">
+      <view class="addressListTopBottomV2BianJi">
+        <image src="/images/icon/xiugai.png"></image>
+        <view>编辑</view>
+      </view>
+      <view class="addressListTopBottomV2Delete">
+        <image src="/images/icon/shanchu.png"></image>
+        <view>删除</view>
+      </view>
+    </view>
+  </view>
+</view>
+
+
+<!-- 新增地址 -->
+<view class="foot">
+  <view class="btn" bindtap='onAddAddress'>新增地址</view>
+</view>
+<view class="zhanwei"></view>

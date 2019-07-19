@@ -1,0 +1,30 @@
+<!--pages/fruits/index.wxml-->
+<view class="head" bind:tap="onSearch">
+  <v-search></v-search>
+</view>
+<view class="zhanwei"></view>
+
+<!-- 顶部轮播 -->
+<swiper autoplay="true" indicator-dots="true" class="swiperContent">
+  <block wx:for="{{imgUrls}}" wx:key="item" bind:tap="onImgClick">
+    <swiper-item>
+      <image src="{{item}}" class="slide-image"/>
+    </swiper-item>
+  </block>
+</swiper>
+<view bindtap="onClick" data-shopid="{{item.id}}" data-shopname="{{item.shopName}}"  class="index_guoshu" wx:for="{{fruits}}" wx:key="{{index}}">
+  <view class="index_guoshu_left">
+    <image src="{{item.logoUrl}}"></image>
+  </view>
+  <view class="index_guoshu_right">
+    <view class="index_guoshu_right_v1">
+      <view class="index_guoshu_right_v1_1">{{item.shopName}}</view>
+      <!-- <view class="index_guoshu_right_v1_2">销量6千+</view> -->
+    </view>
+    <view class="index_guoshu_right_v2">好评100%</view>
+    <view class="index_guoshu_right_v3" >
+      <image wx:for="{{item.goodsList}}" wx:for-index="i" wx:for-item="val" src="{{val.bigImg}}" wx:key="{{i}}"></image>
+    </view>
+  </view>
+</view>
+

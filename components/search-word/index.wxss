@@ -1,0 +1,45 @@
+/* components/search-word/index.wxss */
+.wrapper_search{
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0,0,0,0.7);
+  z-index: 4;
+}
+.wrapper_search_content{
+  width: 750rpx;
+  height: 90rpx;
+  background: #fff;
+  box-sizing: border-box;
+  padding: 0 26rpx;
+  display: flex;
+  align-items: center;
+}
+._search_wrapper2 {
+    width: 0;
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    box-sizing: border-box;
+    height:66rpx;
+    background:rgba(246,246,246,1);
+    border-radius:33rpx;
+    padding-left: 33rpx;
+    color: #333;
+}
+._search_wrapper2 input{
+  color: #333;
+}
+._search_wrapper2 image {
+    margin-right: 20rpx;
+    width: 32rpx;
+    height: 32rpx;
+}
+
+.wrapper_search_content_quxiao{
+  box-sizing: border-box;
+  padding-left: 26rpx;
+}

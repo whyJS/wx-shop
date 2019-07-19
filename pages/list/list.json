@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "搜索",
+  "usingComponents": {
+    "v-search": "/components/search/search",
+    "v-searchword": "/components/search-word/index"
+  }
+}

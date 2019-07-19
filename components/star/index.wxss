@@ -1,0 +1,12 @@
+/* components/star/index.wxss */
+._star{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+}
+._star ._star_img{
+  margin-left: 4rpx;
+  width: 24rpx;
+  height: 24rpx;
+}

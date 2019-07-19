@@ -1,0 +1,36 @@
+<!--pages/category/category.wxml-->
+<view class="wrapper">
+  <view class="head" bindtap="onSearch">
+    <v-search></v-search>
+  </view>
+  
+  <view class="container">  
+    <!--左侧栏-->
+    <scroll-view class='scroll_left' scroll-y="true">
+      <view wx:for="{{leftList}}" class="nav_left" wx:key="index"> 
+        <view class="nav_left_items {{index==leftIndex?'active':''}}" data-index="{{index}}" bindtap='onLeft'>{{item.name}}</view>
+        
+        <view wx:if="{{index==leftIndex}}" class="nav_left_items2_wrapper {{index==leftIndex?'active':''}}">
+            <view  data-index="{{i}}" data-code="{{val.code}}" bindtap='onLeftB' wx:for="{{item.sublist}}" wx:key="{{i}}" wx:for-index="i" wx:for-item="val" class="nav_left_items2 {{i==leftIndexSmall?'active':''}}">
+              <view class="nav_left_items2_1">{{val.name}}</view>
+              <view class="nav_left_items2_2"></view>
+            </view>
+        </view>
+      </view>
+    </scroll-view>
+
+    <!--右侧栏-->
+    <scroll-view scroll-y="true" class="scroll_right" scroll-into-view="{{scrollTopId}}" scroll-with-animation="true" bindscroll="scroll">
+      <navigator wx:for="{{goodsList}}" class="nav_left" wx:key="index" url="/pages/goodsdetail/index?id={{item.id}}" class="nav_right"> 
+        <image src="{{item.bigImg}}"></image>
+        <view class="nav_right_wrapper">
+          <view class="nav_right_wrapper_d1">{{item.fullName}}</view>
+          <!-- <view class="nav_right_wrapper_d2">66382评论    好评率100%</view> -->
+          <view class="nav_right_wrapper_d2">好评率100%</view>
+          <view class="nav_right_wrapper_d3">¥{{item.realPrice}}</view>
+        </view>
+      </navigator>
+    </scroll-view>
+  </view>
+</view>
+

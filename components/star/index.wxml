@@ -1,0 +1,4 @@
+<!--components/star/index.wxml-->
+<view class="_star">
+  <image class="_star_img" wx:for="{{list}}" wx:key="index" src="{{item==0?'/images/icon/xing_off.png':'/images/icon/xing_on.png'}}"></image>
+</view>

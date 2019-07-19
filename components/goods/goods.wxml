@@ -1,0 +1,11 @@
+<!--components/goods/goods.wxml-->
+<view class="_goods1">
+  <view class="_goods1_img">
+    <image src="{{img}}"></image>
+  </view>
+  <view class="_goods1_text">
+    <view class="_goods1_title">{{title}}</view>
+    <view class="_goods1_price">¥{{price}}</view>
+  </view>
+  
+</view>

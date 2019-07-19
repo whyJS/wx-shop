@@ -1,0 +1,105 @@
+<!--pages/list/list.wxml-->
+<view class="head" bind:tap="onSearch">
+  <v-search text="{{searchCode}}"></v-search>
+</view>
+<view class="zhanwei"></view>
+<!-- 商品列表 -->
+<view class="list">
+  <image class="img" src="https://tyigou.haoshichengduo.com/download@2x.png"></image>
+  <view class="right">
+    <view class="right_1">德国 Aptamil 爱他美 婴儿配方奶粉pre段（0-3个月）800g 易吸收 规格可选 柔软舒适 贴身守...</view>
+    <view class="right_2">66382评论 好评率100%</view>
+    <view class="right_3">
+      <view class="right_3_1">¥316.0</view>
+      <view class="right_3_2">库存4596</view>
+    </view>
+  </view>
+</view>
+
+<view class="list">
+  <image class="img" src="https://tyigou.haoshichengduo.com/download@2x.png"></image>
+  <view class="right">
+    <view class="right_1">德国 Aptamil 爱他美 </view>
+    <view class="right_2">66382评论 好评率100%</view>
+    <view class="right_3">
+      <view class="right_3_1">¥316.0</view>
+      <view class="right_3_2">库存4596</view>
+    </view>
+  </view>
+</view>
+
+<view class="list">
+  <image class="img" src="https://tyigou.haoshichengduo.com/download@2x.png"></image>
+  <view class="right">
+    <view class="right_1">德国 Aptamil 爱他美 婴儿配方奶粉pre段（0-3个月）800g 易吸收 规格可选 柔软舒适 贴身守...</view>
+    <view class="right_2">66382评论 好评率100%</view>
+    <view class="right_3">
+      <view class="right_3_1">¥316.0</view>
+      <view class="right_3_2">库存4596</view>
+    </view>
+  </view>
+</view>
+
+<view class="list">
+  <image class="img" src="https://tyigou.haoshichengduo.com/download@2x.png"></image>
+  <view class="right">
+    <view class="right_1">德国 Aptamil 爱他美 </view>
+    <view class="right_2">66382评论 好评率100%</view>
+    <view class="right_3">
+      <view class="right_3_1">¥316.0</view>
+      <view class="right_3_2">库存4596</view>
+    </view>
+  </view>
+</view>
+
+<view class="list">
+  <image class="img" src="https://tyigou.haoshichengduo.com/download@2x.png"></image>
+  <view class="right">
+    <view class="right_1">德国 Aptamil 爱他美 婴儿配方奶粉pre段（0-3个月）800g 易吸收 规格可选 柔软舒适 贴身守...</view>
+    <view class="right_2">66382评论 好评率100%</view>
+    <view class="right_3">
+      <view class="right_3_1">¥316.0</view>
+      <view class="right_3_2">库存4596</view>
+    </view>
+  </view>
+</view>
+
+<view class="list">
+  <image class="img" src="https://tyigou.haoshichengduo.com/download@2x.png"></image>
+  <view class="right">
+    <view class="right_1">德国 Aptamil 爱他美 </view>
+    <view class="right_2">66382评论 好评率100%</view>
+    <view class="right_3">
+      <view class="right_3_1">¥316.0</view>
+      <view class="right_3_2">库存4596</view>
+    </view>
+  </view>
+</view>
+
+<view class="list">
+  <image class="img" src="https://tyigou.haoshichengduo.com/download@2x.png"></image>
+  <view class="right">
+    <view class="right_1">德国 Aptamil 爱他美 婴儿配方奶粉pre段（0-3个月）800g 易吸收 规格可选 柔软舒适 贴身守...</view>
+    <view class="right_2">66382评论 好评率100%</view>
+    <view class="right_3">
+      <view class="right_3_1">¥316.0</view>
+      <view class="right_3_2">库存4596</view>
+    </view>
+  </view>
+</view>
+
+<view class="list">
+  <image class="img" src="https://tyigou.haoshichengduo.com/download@2x.png"></image>
+  <view class="right">
+    <view class="right_1">德国 Aptamil 爱他美 </view>
+    <view class="right_2">66382评论 好评率100%</view>
+    <view class="right_3">
+      <view class="right_3_1">¥316.0</view>
+      <view class="right_3_2">库存4596</view>
+    </view>
+  </view>
+</view>
+
+
+<!-- 输入框搜索 -->
+<v-searchword wx:if="{{searchShow}}" bind:searchCancel="onCancel" bind:searchConfirm="onConfirm"></v-searchword>

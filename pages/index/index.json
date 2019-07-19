@@ -1,0 +1,11 @@
+{
+  "navigationBarTitleText": "首页",
+  "backgroundTextStyle": "dark",
+  "enablePullDownRefresh": true,
+  "usingComponents": {
+    "v-screen": "/components/screen/screen",
+    "v-search": "/components/search/search",
+    "v-goods": "/components/goods/goods",
+    "v-bottom": "/components/bottom/bottom"
+  }
+}

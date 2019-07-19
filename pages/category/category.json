@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "生活空间",
+  "usingComponents": {
+    "v-search": "/components/search/search"
+  }
+}

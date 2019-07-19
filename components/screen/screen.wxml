@@ -1,0 +1,26 @@
+<!--components/screen/screen.wxml-->
+<view class="wrapper">
+<view class="leftContent" bind:tap="onClose"></view>
+  <view class="content">
+    <scroll-view scroll-y="true" class="top">
+      <view></view>
+      <view></view>
+      <view></view>
+      <view></view>
+      <view></view>
+      <view></view>
+      <view></view>
+      <view></view>
+      <view></view>
+      <view></view>
+      <view></view>
+      <view></view>
+      <view></view>
+      <view>123</view>
+    </scroll-view>
+    <view class="bottom">
+      <view class="left">重置</view>
+      <view class="right">确定</view>
+    </view>
+  </view>
+</view>

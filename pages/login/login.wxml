@@ -1,0 +1,21 @@
+<!--pages/login/login.wxml-->
+<view class="zhanwei"></view>
+<view class="content">
+  <view class="title">手机号</view>
+  <input type='number' bindinput="onPhone" placeholder='请输入手机号'></input>
+  <view class="yanzhengma" bindtap='onCode'>{{text}}</view>
+</view>
+
+<view class="content">
+  <view class="title">验证码</view>
+  <input type='number' bindinput="onNum" placeholder='请输入验证码'></input>
+</view>
+<view class="btn {{show?'btnactive':''}}" bindtap='onLogin'>登录</view>
+<view class="bottom">
+  <image src="/images/icon/btn2.png"></image>
+  <text>已阅读并同意go base </text>
+  <navigator url="" hover-class="navigator-hover">服务协议、</navigator>
+  <navigator url="" hover-class="navigator-hover">使用协议</navigator>
+  <text>和</text>
+  <navigator url="" hover-class="navigator-hover">隐私权政策</navigator>
+</view>

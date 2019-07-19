@@ -1,0 +1,42 @@
+/* components/goods/goods.wxss */
+._goods1{
+  width: 360rpx;
+  background: #fff;
+}
+._goods1 ._goods1_img{
+  width: 360rpx;
+  height: 360rpx;
+}
+._goods1 ._goods1_img image{
+  width: 360rpx;
+  height: 360rpx;
+}
+._goods1 ._goods1_text{
+  width: 360rpx;
+  box-sizing: border-box;
+  padding: 20rpx;
+  height: 157rpx;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  
+
+}
+._goods1 ._goods1_text ._goods1_title{
+  overflow:hidden; 
+  text-overflow:ellipsis;
+  display:-webkit-box; 
+  -webkit-box-orient:vertical;
+  -webkit-line-clamp:2; 
+  font-size:26rpx;
+  font-weight:500;
+  color:rgba(51,51,51,1);
+  /* line-height:39px; */
+  line-height: 30rpx;
+  white-space:normal;
+}
+._goods1 ._goods1_text ._goods1_price{
+  font-size:30rpx;
+  font-weight:500;
+  color:rgba(238,51,54,1);
+}

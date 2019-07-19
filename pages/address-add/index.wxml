@@ -1,0 +1,25 @@
+<!--pages/address-add/index.wxml-->
+<view class="content">
+  <view class="left">收货人</view>
+  <input class="right" bindinput='onName' placeholder='请输入姓名'></input>
+</view>
+<view class="content">
+  <view class="left">联系方式</view>
+  <input class="right" bindinput='onPhone' placeholder='请输入手机号'></input>
+</view>
+<view class="content">
+  <view class="left">所在地区</view>
+  <!-- <input class="right" placeholder='请选择地区'></input> -->
+  <picker class="placeholder right2" mode="multiSelector" bindchange="func_changeCitysChange" bindcolumnchange="func_changeCitysChangeColumn" value="{{ citysIndex }}" range="{{ cityArray }}">
+    <view class="picker">{{ssq}}</view>
+  </picker>
+</view>
+<view class="content">
+  <view class="left">详细地址</view>
+  <input class="right" bindinput='onAddress' placeholder='街道、小区门牌等详细地址'></input>
+</view>
+
+
+
+<!-- 按钮 -->
+<view class="btn2" bindtap='onClick'>保存</view>

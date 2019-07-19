@@ -1,0 +1,5 @@
+<!--components/search/search.wxml-->
+<view class="_search_wrapper" bind:tap="onSearch">
+    <image src="/images/icon/index_2.png" />
+    <text>{{text?text:'搜索你想要的商品'}}</text>
+</view>

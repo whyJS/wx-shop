@@ -1,0 +1,152 @@
+{
+	"description": "项目配置文件",
+	"packOptions": {
+		"ignore": []
+	},
+	"setting": {
+		"urlCheck": false,
+		"es6": true,
+		"postcss": true,
+		"minified": true,
+		"newFeature": true,
+		"nodeModules": false
+	},
+	"compileType": "miniprogram",
+	"libVersion": "2.7.4",
+	"appid": "wx295ad40200c3bd84",
+	"projectname": "wx-shop",
+	"debugOptions": {
+		"hidedInDevtools": []
+	},
+	"isGameTourist": false,
+	"simulatorType": "wechat",
+	"simulatorPluginLibVersion": {},
+	"condition": {
+		"search": {
+			"current": -1,
+			"list": []
+		},
+		"conversation": {
+			"current": -1,
+			"list": []
+		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
+		"game": {
+			"currentL": -1,
+			"list": []
+		},
+		"miniprogram": {
+			"current": 16,
+			"list": [
+				{
+					"id": -1,
+					"name": "登路",
+					"pathName": "pages/login/login",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "登路",
+					"pathName": "pages/index/index",
+					"query": "name=123"
+				},
+				{
+					"id": -1,
+					"name": "我的",
+					"pathName": "pages/mine/mine",
+					"query": "name=123"
+				},
+				{
+					"id": -1,
+					"name": "新增地址",
+					"pathName": "pages/address-add/index",
+					"query": "name=123"
+				},
+				{
+					"id": -1,
+					"name": "果蔬",
+					"pathName": "pages/fruits/index",
+					"query": "name=123"
+				},
+				{
+					"id": -1,
+					"name": "购物车",
+					"pathName": "pages/shopcar/shopcar",
+					"query": "name=123"
+				},
+				{
+					"id": 6,
+					"name": "搜索商品",
+					"pathName": "pages/list/list",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "生活空间",
+					"pathName": "pages/category/category",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "生活空间",
+					"pathName": "pages/pay-success/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "商品详情",
+					"pathName": "pages/goodsdetail/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "创建订单",
+					"pathName": "pages/order-created/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "地址列表",
+					"pathName": "pages/address-list/index",
+					"query": ""
+				},
+				{
+					"id": 12,
+					"name": "我的订单",
+					"pathName": "pages/order-list/index",
+					"query": "index=2"
+				},
+				{
+					"id": -1,
+					"name": "pages/order-detail/index",
+					"pathName": "pages/order-detail/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/log/index",
+					"pathName": "pages/log/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/log/log",
+					"pathName": "pages/log/log",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/log/index",
+					"pathName": "pages/log/index",
+					"scene": null
+				}
+			]
+		}
+	}
+}

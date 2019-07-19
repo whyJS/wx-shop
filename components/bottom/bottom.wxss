@@ -1,0 +1,12 @@
+/* components/bottom/bottom.wxss */
+._bottom{
+  width: 750rpx;
+  height: 94rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f5f5f5;
+  font-size:24rpx;
+  font-weight:500;
+  color:rgba(194,194,194,1);
+}

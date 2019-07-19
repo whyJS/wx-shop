@@ -1,0 +1,66 @@
+<!--pages/shopcar/shopcar.wxml-->
+<view class="zhanwei"></view>
+<view class="car_top">
+  <view class="car_top_v1">
+    <image src="/images/icon/btn1.png"></image>
+    <view>全选</view>
+  </view>
+  <view class="car_top_v2" bindtap='onShowDelete'>{{text}}</view>
+</view>
+<!-- 商品列表 -->
+<view class="car_list">
+  <view class="car_list_v1">
+    <image src="/images/icon/btn1.png"></image>
+  </view>
+  <view class="car_list_v2">
+    <image src="https://tyigou.haoshichengduo.com/download@2x.png"></image>
+  </view>
+  <view class="car_list_v3">
+    <view class="car_list_v3_1">美菱加湿器家用静音大容量卧室办公室空调空气净化小型迷你香薰...</view>
+    <view class="car_list_v3_2">颜色：白色</view>
+    <view class="car_list_v3_3">
+      <view class="car_list_v3_3_left">￥360.0</view>
+      <view class="car_list_v3_3_right"><v-add bind:add="onAdd" bind:delete="onDelete" num="10" index="2"></v-add></view>
+    </view>
+  </view>
+</view>
+<view class="car_list">
+  <view class="car_list_v1">
+    <image src="/images/icon/btn1.png"></image>
+  </view>
+  <view class="car_list_v2">
+    <image src="https://tyigou.haoshichengduo.com/download@2x.png"></image>
+  </view>
+  <view class="car_list_v3">
+    <view class="car_list_v3_1">美菱加湿器家用静音大容量卧室办公室空调空气净化小型迷你香薰...</view>
+    <view class="car_list_v3_2">颜色：白色</view>
+    <view class="car_list_v3_3">
+      <view class="car_list_v3_3_left">￥360.0</view>
+    </view>
+  </view>
+</view>
+<view class="car_list">
+  <view class="car_list_v1">
+    <image src="/images/icon/btn1.png"></image>
+  </view>
+  <view class="car_list_v2">
+    <image src="https://tyigou.haoshichengduo.com/download@2x.png"></image>
+  </view>
+  <view class="car_list_v3">
+    <view class="car_list_v3_1">美菱加湿器家</view>
+    <view class="car_list_v3_2">颜色：白色</view>
+    <view class="car_list_v3_3">
+      <view class="car_list_v3_3_left">￥360.0</view>
+    </view>
+  </view>
+</view>
+
+<!-- 底部 -->
+<view class="car_bottom">
+  <view class="car_bottom_left">
+    <view class="car_bottom_left_v1">合计：</view>
+    <view class="car_bottom_left_v2">￥730</view>
+  </view>
+  <view class="car_bottom_right" wx:if="{{!showDelete}}">去结算</view>
+  <view class="car_bottom_right" wx:if="{{showDelete}}">删除</view>
+</view>

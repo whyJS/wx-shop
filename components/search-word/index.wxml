@@ -1,0 +1,10 @@
+<!--components/search-word/index.wxml-->
+<view class="wrapper_search">
+  <view class="wrapper_search_content">
+    <view class="_search_wrapper2" bind:tap="onSearch">
+      <image src="/images/icon/index_2.png" />
+      <input focus='{true}' value="{{query}}"  bind:confirm="onConfirm" placeholder="搜索你想要的商品"></input>
+    </view>
+    <view bindtap="onCancel" class="wrapper_search_content_quxiao">取消</view>
+  </view>
+</view>

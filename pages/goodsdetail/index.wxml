@@ -1,0 +1,112 @@
+<!--pages/goodsdetail/index.wxml-->
+<!-- 顶部轮播 -->
+
+<swiper autoplay="true" indicator-dots="true" class="swiperContent">
+  <block wx:for="{{imgUrls}}" wx:key="item" bind:tap="onImgClick">
+    <swiper-item>
+      <image src="{{item}}" class="slide-image"/>
+    </swiper-item>
+  </block>
+</swiper>
+
+<!-- 商品名称 -->
+<view class="name">{{goods.fullName}}</view>
+<!-- 简介 -->
+<view class="jianjie">
+{{goods.description}}
+</view>
+<!-- 价格 -->
+<view class="money">
+  <view class="money_v1">
+    <text class="t1">￥{{goods.realPrice}}</text>
+    <text class="t2">￥{{godds.oriPrice}}</text>
+  </view>
+  <view class="money_v2">
+    <text> 库存：{{goods.totalNum}}</text>
+   
+  </view>
+</view>
+<!-- 灰色站位 -->
+<view class="zhanwei"></view>
+
+<!-- 商品参数 -->
+<view class="canshu">
+  <text>商品参数：</text>
+  <!-- <text class="t2">“须臾”</text> -->
+  <text class="t2">“{{remark}}”</text>
+</view>
+<!-- 灰色站位 -->
+<view class="zhanwei"></view>
+
+<!-- 评价 -->
+<!-- <view class="pingjia">
+  <view class="pingjia_header">
+    <view>评价（68）</view>
+    <image src='/images/icon/right1.png'></image>
+  </view>
+
+  <view class="pingjia_item">
+    <view class="pingjia_item_top">
+      <image class="pingjia_item_top_img" src="/images/icon/touxiang.png"></image>
+      <view class="pingjia_item_top_phone">121212121212112</view>
+      <v-star num="{{2}}"></v-star>
+    </view>
+    <view class="pingjia_item_bottom">千人千面，有一千个读者就有一千个哈姆雷特。因为我们消费的是体验，到店吃饭、到店娱乐、线下旅游等等，每个人的体验感受不会完全一样，所以评价内容上也可以做到彼此差异，各具特点...</view>
+  </view>
+
+  <view class="pingjia_item">
+    <view class="pingjia_item_top">
+      <image class="pingjia_item_top_img" src="/images/icon/touxiang.png"></image>
+      <view class="pingjia_item_top_phone">121212121212112</view>
+      <v-star num="{{1}}"></v-star>
+    </view>
+    <view class="pingjia_item_bottom">千人千面，有一千个读者就有一千个哈姆雷特。因为我们消费的是体验，到店吃饭、到店娱乐、线下旅游等等，每个人的体验感受不会完全一样，所以评价内容上也可以做到彼此差异，各具特点...</view>
+  </view>
+
+  <view class="pingjia_item">
+    <view class="pingjia_item_top">
+      <image class="pingjia_item_top_img" src="/images/icon/touxiang.png"></image>
+      <view class="pingjia_item_top_phone">121212121212112</view>
+      <v-star num="{{3}}"></v-star>
+    </view>
+    <view class="pingjia_item_bottom">千人千面，有一千个读者就有一千个哈姆雷特。因为我们消费的是体验，到店吃饭、到店娱乐、线下旅游等等，每个人的体验感受不会完全一样，所以评价内容上也可以做到彼此差异，各具特点...</view>
+  </view>
+
+  <view class="pingjia_item">
+    <view class="pingjia_item_top">
+      <image class="pingjia_item_top_img" src="/images/icon/touxiang.png"></image>
+      <view class="pingjia_item_top_phone">121212121212112</view>
+      <v-star num="{{5}}"></v-star>
+    </view>
+    <view class="pingjia_item_bottom">千人千面，有一千个读者就有一千个哈姆雷特。因为我们消费的是体验，到店吃饭、到店娱乐、线下旅游等等，每个人的体验感受不会完全一样，所以评价内容上也可以做到彼此差异，各具特点...</view>
+  </view>
+</view> -->
+
+<!-- 商品详情 -->
+<view class="goods">
+  <view class="goods_header">
+    宝贝详情
+  </view>
+  <image mode="widthFix" class="baobei_img" wx:for="{{imgUrls}}" wx:key="item" src="{{item}}"></image>
+</view>
+
+<!-- 底部导航 -->
+<view class="foot">
+  <view class="foot1">
+    <view class="foot1_list">
+      <image src="/images/icon/dianpu.png" bindtap="onShop"></image>
+      <view class="foot1_list_v1">店铺</view>
+    </view>
+    <view class="foot1_list">
+      <image src="/images/icon/guanzhu.png"></image>
+      <view class="foot1_list_v1">收藏</view>
+    </view>
+    <view class="foot1_list" bindtap="onCar" >
+      <image src="/images/icon/gouwuche.png"></image>
+      <view class="foot1_list_v1">购物车</view>
+      <!-- <view class="foot1_list_v2">7</view> -->
+    </view>
+  </view>
+  <view class="foot2" bindtap="onShopCar">加入购物车</view>
+  <view class="foot3" bindtap='onOrder'>立即购买</view>
+</view>

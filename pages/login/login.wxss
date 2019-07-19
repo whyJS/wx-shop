@@ -1,0 +1,79 @@
+.zhanwei{
+  width: 100%;
+  height: 110rpx;
+}
+.content{
+  width:698rpx;
+  height:90rpx;
+  background:rgba(246,246,246,1);
+  border-radius:5rpx;
+  display: flex;
+  align-items: center;
+  margin: 0 auto;
+  margin-bottom: 20rpx;
+  box-sizing: border-box;
+  padding: 0 44rpx;
+}
+.title{
+  width: 112rpx;
+  font-size:28rpx;
+  font-weight:600;
+  color:rgba(20,20,20,1);
+}
+input{
+  font-size: 28rpx;
+  width: 0;
+  flex: 1;
+}
+.yanzhengma{
+  box-sizing: border-box;
+  padding-left: 20rpx;
+  font-size:28rpx;
+  font-weight:600;
+  color:rgba(241,48,46,1);
+  line-height:48rpx;
+  opacity:0.35;
+}
+
+.btn{
+  width:698rpx;
+  height:90rpx;
+  background:rgba(241,48,46,1);
+  opacity:0.3;
+  border-radius:5rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  margin-top: 60rpx;
+  font-size:32rpx;
+  font-weight:600;
+  color:rgba(255,255,255,1);
+}
+.btnactive{
+  opacity:1;
+}
+.bottom{
+  width:698rpx;
+  margin: 0 auto;
+  margin-top: 27rpx;
+  display: flex;
+  align-items: center;
+}
+.bottom image{
+  width: 20rpx;
+  height: 20rpx;
+  margin-right: 12rpx;
+}
+.bottom text{
+  font-size:22rpx;
+font-family:PingFang-SC-Medium;
+font-weight:500;
+color:rgba(174,174,174,1);
+}
+.bottom navigator{
+  font-size:22rpx;
+font-family:PingFang-SC-Medium;
+font-weight:500;
+color:#F1302E;
+}

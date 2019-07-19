@@ -1,0 +1,7 @@
+<!--pages/pay-success/index.wxml-->
+<image class="img1" src="/images/paysuccess.png"></image>
+<view class="v1">支付成功</view>
+<view class="v2">¥126.4</view>
+<view class="v3">支付方式：微信支付</view>
+<view class="v4">查看订单</view>
+<view class="v5">继续购物</view>

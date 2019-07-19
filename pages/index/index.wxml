@@ -1,0 +1,173 @@
+<!--首页-->
+<!-- 顶部搜索 -->
+<view class="head">
+  <view class="left" bindtap="onLocationHave">
+    <image src="/images/icon/index_1.png"></image>
+    <view>{{city}}</view>
+  </view>
+  <view class="right" bindtap="onSearch">
+    <v-search></v-search>
+  </view>
+</view>
+<view class="zhanwei"></view>
+
+<!-- 顶部轮播 -->
+<swiper autoplay="true" indicator-dots="true" class="swiperContent">
+  <block wx:for="{{imgUrls}}" wx:key="item" bind:tap="onImgClick">
+    <swiper-item>
+      <image src="{{item.bannerUrl}}" class="slide-image"/>
+    </swiper-item>
+  </block>
+</swiper>
+
+<!-- 生活空间，创意空间，创业空间 -->
+<view class="index_top1">
+  <view class="v1">
+    <navigator url="/pages/category/category?title=生活空间&pcode=shkj&groupCode=kj" hover-class="navigator-hover">
+      <image src="https://tyigou.haoshichengduo.com/index_url_0.png"></image>
+    </navigator>
+  </view>
+  <view class="v2">
+    <view class="d1">
+      <navigator url="/pages/category/category?title=创意空间&pcode=cykj&groupCode=kj" hover-class="navigator-hover">
+        <image src="https://tyigou.haoshichengduo.com/index_url_1.png"></image>
+      </navigator>
+    </view>
+    <view class="d2">
+      <navigator url="/pages/category/category" hover-class="navigator-hover">
+        <image src="https://tyigou.haoshichengduo.com/index_url_2.png"></image>
+      </navigator>
+    </view>
+  </view>
+</view>
+
+<!-- 限时抢购 -->
+<!-- <view class="index_xianshi">
+  <image class="xianshi_img" src="/images/index_3.png"></image>
+  <view class="xianshi_div">
+    <view class="xianshi_d1">12.00场</view>
+    <view class="xianshi_d2">
+      <view>{{h}}</view> : <view>{{m}}</view> : <view>{{s}}</view>
+    </view>
+  </view>
+</view>
+<scroll-view class="index_xianshi_scroll" scroll-x>
+  <view class="item">
+    <image src="https://tyigou.haoshichengduo.com/download@2x.png"></image>
+    <view class="index_xianshi_scroll_d1">乐心A3电子体重秤智能蓝牙微信互乐心A3电子体重秤智能蓝牙微信互</view>
+    <view class="index_xianshi_scroll_d2">991人付款</view>
+    <view class="index_xianshi_scroll_d3">¥59.00</view>
+  </view>
+  <view class="item">
+    <image src="https://tyigou.haoshichengduo.com/download@2x.png"></image>
+    <view class="index_xianshi_scroll_d1">乐心A3电子体重秤智能蓝牙微信互乐心A3电子体重秤智能蓝牙微信互</view>
+    <view class="index_xianshi_scroll_d2">991人付款</view>
+    <view class="index_xianshi_scroll_d3">¥59.00</view>
+  </view>
+  <view class="item">
+    <image src="https://tyigou.haoshichengduo.com/download@2x.png"></image>
+    <view class="index_xianshi_scroll_d1">乐心A3电子体重秤智能蓝牙微信互乐心A3电子体重秤智能蓝牙微信互</view>
+    <view class="index_xianshi_scroll_d2">991人付款</view>
+    <view class="index_xianshi_scroll_d3">¥59.00</view>
+  </view>
+  <view class="item">
+    <image src="https://tyigou.haoshichengduo.com/download@2x.png"></image>
+    <view class="index_xianshi_scroll_d1">乐心A3电子体重秤智能蓝牙微信互乐心A3电子体重秤智能蓝牙微信互</view>
+    <view class="index_xianshi_scroll_d2">991人付款</view>
+    <view class="index_xianshi_scroll_d3">¥59.00</view>
+  </view>
+  <view class="item">
+    <image src="https://tyigou.haoshichengduo.com/download@2x.png"></image>
+    <view class="index_xianshi_scroll_d1">乐心A3电子体重秤智能蓝牙微信互乐心A3电子体重秤智能蓝牙微信互</view>
+    <view class="index_xianshi_scroll_d2">991人付款</view>
+    <view class="index_xianshi_scroll_d3">¥59.00</view>
+  </view>
+  <view class="item">
+    <image src="https://tyigou.haoshichengduo.com/download@2x.png"></image>
+    <view class="index_xianshi_scroll_d1">乐心A3电子体重秤智能蓝牙微信互乐心A3电子体重秤智能蓝牙微信互</view>
+    <view class="index_xianshi_scroll_d2">991人付款</view>
+    <view class="index_xianshi_scroll_d3">¥59.00</view>
+  </view>
+  <view class="item">
+    <image src="https://tyigou.haoshichengduo.com/download@2x.png"></image>
+    <view class="index_xianshi_scroll_d1">乐心A3电子体重秤智能蓝牙微信互乐心A3电子体重秤智能蓝牙微信互</view>
+    <view class="index_xianshi_scroll_d2">991人付款</view>
+    <view class="index_xianshi_scroll_d3">¥59.00</view>
+  </view>
+</scroll-view> -->
+
+<!-- 果蔬食品 -->
+<view bindtap='onFruitsAll' class="index_img_top">
+  <image src="https://tyigou.haoshichengduo.com/index_guoshu.png"></image>
+</view>
+<view bindtap="onFruits" data-shopid="{{item.id}}" data-shopname="{{item.shopName}}" class="index_guoshu" wx:for="{{fruits}}" wx:key="{{index}}">
+  <view class="index_guoshu_left">
+    <image src="{{item.logoUrl}}"></image>
+  </view>
+  <view class="index_guoshu_right">
+    <view class="index_guoshu_right_v1">
+      <view class="index_guoshu_right_v1_1">{{item.shopName}}</view>
+      <!-- <view class="index_guoshu_right_v1_2">销量6千+</view> -->
+    </view>
+    <view class="index_guoshu_right_v2">好评100%</view>
+    <view class="index_guoshu_right_v3" >
+      <image wx:for="{{item.goodsList}}" wx:for-index="i" wx:for-item="val" src="{{val.bigImg}}" wx:key="{{i}}"></image>
+      <!-- <image src="https://tyigou.haoshichengduo.com/download@2x.png"></image>
+      <image src="https://tyigou.haoshichengduo.com/download@2x.png"></image>
+      <image src="https://tyigou.haoshichengduo.com/download@2x.png"></image> -->
+    </view>
+  </view>
+</view>
+
+
+<!-- 美女养成 -->
+<!-- <view class="index_img_top">
+  <image src="https://tyigou.haoshichengduo.com/index_meinv.png"></image>
+</view>
+<swiper autoplay="true" indicator-dots="true" class="swiperGoodsContent">
+  <block wx:for="{{imgUrls}}" wx:key="item" bind:tap="onImgClick">
+    <swiper-item class="swiperItem">
+      <view class="item">
+        <view class="item_v1">
+          <image src="https://tyigou.haoshichengduo.com/download@2x.png"></image>
+        </view>
+        <view class="item_v2">LES BEIGES</view>
+        <view class="item_v3">￥720.0</view>
+      </view>
+       <view class="item">
+        <view class="item_v1">
+          <image src="https://tyigou.haoshichengduo.com/download@2x.png"></image>
+        </view>
+        <view class="item_v2">LES BEIGES</view>
+        <view class="item_v3">￥720.0</view>
+      </view>
+       <view class="item">
+        <view class="item_v1">
+          <image src="https://tyigou.haoshichengduo.com/download@2x.png"></image>
+        </view>
+        <view class="item_v2">LES BEIGES</view>
+        <view class="item_v3">￥720.0</view>
+      </view>
+    </swiper-item>
+  </block>
+</swiper> -->
+
+<!-- 猜你喜欢 -->
+<!-- <view class="like">
+  <view class="like_v1">猜你</view>
+  <view class="like_v2">喜欢</view>
+</view>
+<view class="like_list">
+  <view class="like_list_item">
+    <v-goods title="款男生中号补习袋卡通书包黑" img="https://tyigou.haoshichengduo.com/download@2x.png" price="100"></v-goods>
+  </view>
+  <view class="like_list_item">
+    <v-goods title="款男生中号补习袋卡通书包黑款男生中号补习袋卡通书包黑款男生中号补习袋卡通书包黑" img="https://tyigou.haoshichengduo.com/download@2x.png" price="100"></v-goods>
+  </view>
+  <view class="like_list_item">
+    <v-goods title="款男生中号补习袋卡通书包黑" img="https://tyigou.haoshichengduo.com/download@2x.png" price="100"></v-goods>
+  </view>
+</view> --> 
+
+<v-bottom></v-bottom>
+

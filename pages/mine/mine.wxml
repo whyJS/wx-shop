@@ -1,0 +1,91 @@
+<!--pages/mine/mine.wxml-->
+<!-- 头部 -->
+<view class="mine_header">
+  <view class="mine_header_v1">
+    <open-data type="userAvatarUrl"></open-data>
+  </view>
+  <view>
+    <view class="mine_header_v2"><open-data type="userNickName"></open-data></view>
+  </view>
+</view>
+<!-- 我的订单 -->
+<view class="mine_order">
+  <view class="mine_order_v1">
+    <view class="mine_order_v1_d1">我的订单</view>
+    <view class="mine_order_v1_d2" bindtap='onOrder'>全部订单 <image src="/images/icon/right1.png"></image></view>
+  </view>
+
+  <view class="mine_order_v2">
+    <view class="mine_order_v2_list">
+      <view class="mine_order_v2_list_i1">
+        <image src="/images/mine/daifukuan.png"></image>
+        <view>1</view>
+      </view>
+      <view class="mine_order_v2_list_i2">待付款</view>
+    </view>
+    <view class="mine_order_v2_list">
+      <view class="mine_order_v2_list_i1">
+        <image src="/images/mine/daifahuo.png"></image>
+        <view></view>
+      </view>
+      <view class="mine_order_v2_list_i2">待发货</view>
+    </view>
+    <view class="mine_order_v2_list">
+      <view class="mine_order_v2_list_i1">
+        <image src="/images/mine/daishouhuo.png"></image>
+        <view></view>
+      </view>
+      <view class="mine_order_v2_list_i2">待收货</view>
+    </view>
+    <view class="mine_order_v2_list">
+      <view class="mine_order_v2_list_i1">
+        <image src="/images/mine/daipingjia.png"></image>
+        <view></view>
+      </view>
+      <view class="mine_order_v2_list_i2">待评价</view>
+    </view>
+    <view class="mine_order_v2_list">
+      <view class="mine_order_v2_list_i1">
+        <image src="/images/mine/shouhou.png"></image>
+        <view></view>
+      </view>
+      <view class="mine_order_v2_list_i2">退款/售后</view>
+    </view>
+  </view>
+</view>
+
+<!-- 列表 -->
+<view class="mine_list">
+<!-- 我的地址 -->
+  <view bind:tap="onAddress" class="mine_list_item">
+    <view class="mine_list_item_v1">
+      <image src="/images/mine/dizhi.png"></image>
+    </view>
+    <view class="mine_list_item_v2">我的地址</view>
+    <view class="mine_list_item_v3">
+      <view></view>
+      <image src="/images/icon/right1.png"></image>
+    </view>
+  </view>
+  <!-- 我的收藏 -->
+  <view class="mine_list_item">
+    <view class="mine_list_item_v1">
+      <image src="/images/mine/shoucang.png"></image>
+    </view>
+    <view class="mine_list_item_v2">我的收藏</view>
+    <view class="mine_list_item_v3">
+      <view></view>
+      <image src="/images/icon/right1.png"></image>
+    </view>
+  </view>
+  <view class="mine_list_item" bindtap='onPhone'>
+    <view class="mine_list_item_v1">
+      <image src="/images/mine/kefu.png"></image>
+    </view>
+    <view class="mine_list_item_v2">我的客服</view>
+    <view class="mine_list_item_v3">
+      <view>010-3520363</view>
+      <image src="/images/icon/right1.png"></image>
+    </view>
+  </view>
+</view>
