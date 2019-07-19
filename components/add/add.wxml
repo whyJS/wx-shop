@@ -1,7 +1,8 @@
 <!--components/add/add.wxml-->
 <view class="_add">
-  <view bindtap='onAdd' class="_add_left"><image src="/images/icon/add.png"></image></view>
+  <view bindtap='onDelete' class="_add_left"><image src="/images/icon/delete.png"></image></view>
   <view class="_add_num">{{num}}</view>
-  <view bindtap='onDelete' class="_add_right"><image src="/images/icon/delete.png"></image></view>
+  
+  <view bindtap='onAdd' class="_add_right"><image src="/images/icon/add.png"></image></view>
 </view>
  

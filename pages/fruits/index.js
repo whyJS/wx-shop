@@ -27,7 +27,7 @@ Page({
   _api_fruits() {
     homeModel.GetFruitsList({
       pageNum: 1,
-      pageSize: 4
+      pageSize: 100
     }).then((res) => {
       console.log(res)
       if (res.result == 200) {

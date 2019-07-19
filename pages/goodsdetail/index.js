@@ -42,9 +42,28 @@ Page({
       url: '/pages/order-created/index'
     })
   },
-  // 加入购物车
-  onShopCar(){
 
+
+  //添加购物车
+  onShopCar() {
+    goodsModel.SetAddCar({
+      goodsId: this.data.goods.goodsId,
+      num: 1
+    }).then((res) => {
+      if (res.result == 200) {
+        wx.showToast({
+          title: '添加成功',
+          icon: 'none',
+          duration: 2000
+        })
+      } else {
+        wx.showToast({
+          title: res.msg,
+          icon: 'none',
+          duration: 2000
+        })
+      }
+    })
   },
   // 跳转到购物车
   onCar(){

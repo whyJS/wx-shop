@@ -1,6 +1,9 @@
 // pages/address-add/index.js
 import { getAreaInfo } from '../../utils/cityArray.js'
 var arrays = getAreaInfo();//在头部引入 省市区地址js,这里封装成了方法了。
+
+import { AddressModel } from '../../models/address.js'
+const addressModel = new AddressModel()
 Page({
 
   /**
@@ -18,6 +21,18 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    if(options.type&&options.type==1){
+      console.log(options)
+      this.data.type = 1
+      this.setData({
+        type: 1,
+        name: options.name
+      });
+    }
+
+
+
+
     var that = this;
     if (wx.getStorageSync('global_cityData')) {
       var cityArray = wx.getStorageSync('global_cityData');
@@ -71,7 +86,7 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-
+    console.log(this.data)
   },
 
   /**
@@ -140,6 +155,8 @@ Page({
       })
       return
     }
+
+    this._api_add()
   },
 
 
@@ -227,5 +244,26 @@ Page({
       ssq: ssq,//获取选中的省市区
     });
   },
+  _api_add(){
+    addressModel.GetAddAddress({
+      provinceCode: this.data.cityArrayCode[0][this.data.citysIndex[0]],
+      cityCode: this.data.cityArrayCode[1][this.data.citysIndex[1]],
+      countyCode: this.data.cityArrayCode[2][this.data.citysIndex[2]],
+      address: this.data.addressdetail,
+      phone: this.data.phone,
+      consignee: this.data.name
+    }).then((res)=>{
+      if (res.result == 200) {
+        wx.navigateBack()
+
+      } else {
+        wx.showToast({
+          title: res.msg,
+          icon: 'none',
+          duration: 2000
+        })
+      }
+    })
+  }
 
 })

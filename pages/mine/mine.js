@@ -68,7 +68,7 @@ Page({
   onAddress() {
     console.log('asasa')
     wx.navigateTo({
-      url: '/pages/address-list/index',
+      url: '/pages/address-list/index?type=1',
     })
   },
   // 全部订单

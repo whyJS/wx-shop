@@ -9,18 +9,22 @@ class AddressModel extends HTTP {
   // 地址列表
   GetAddressList(data) {
     return this.request({
-      url: '/user/address/list',
-      method:'POST'
+      url: '/user/address/list'
     })
   }
 
   // 新增收获地址
   GetAddAddress(data) {
     return this.request({
-      url: '/user/address/save',
+      url: `/user/address/save?provinceCode=${data.provinceCode}&cityCode=${data.cityCode}&countyCode=${data.countyCode}&address=${data.address}&phone=${data.phone}&consignee=${data.consignee}`,
       method: 'POST',
       data
     })
+    // return this.request({
+    //   url: '/user/address/save',
+    //   method: 'POST',
+    //   data
+    // })
   }
 
   // 编辑收获地址

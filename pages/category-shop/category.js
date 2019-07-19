@@ -36,7 +36,8 @@ Page({
   onLeft(e){
     this.setData({
       leftIndex: e.currentTarget.dataset.index,
-      leftIndexSmall:0
+      leftIndexSmall:0,
+      pageNum: 1
     })
 
     if (this.data.leftList[this.data.leftIndex].sublist.length>0){
@@ -48,7 +49,8 @@ Page({
   },
   onLeftB(e) {
     this.setData({
-      leftIndexSmall: e.currentTarget.dataset.index
+      leftIndexSmall: e.currentTarget.dataset.index,
+      pageNum: 1
     })
     this._api_goods(this.data.shopid, this.data.leftList[this.data.leftIndex].code,e.currentTarget.dataset.code, 0)
   },
@@ -57,6 +59,22 @@ Page({
       url: '/pages/list/list'
     })
   },
+  //滚动到底部
+  scrollBottom() {
+    var that = this;
+    // 显示加载图标  
+    wx.showLoading({
+      title: '玩命加载中',
+    })
+    this.data.pageNum++;
+    if (this.data.leftList[this.data.leftIndex].list) {
+      this._api_goods(this.data.shopid, this.data.leftList[this.data.leftIndex].code, this.data.leftList[this.data.leftIndex].sublist[this.data.leftIndexSmall].code, 1)
+    } else {
+      this._api_goods(this.data.shopid, this.data.leftList[this.data.leftIndex].code, '', 1)
+    }
+
+  },
+
   // 一级分类
   _api_all(shopId){
     goodsModel.GetShopList({
@@ -91,7 +109,7 @@ Page({
       pageNum: this.data.pageNum,
       pageSize: this.data.pageSize
     }).then((res) => {
-      console.log(res)
+      wx.hideLoading();
       if (res.result == 200) {
         if(i==0){
           this.setData({

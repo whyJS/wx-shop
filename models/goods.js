@@ -25,9 +25,9 @@ class GoodsModel extends HTTP {
   }
   // 根据分类查商品加店铺id
   GetGoodsList2(data) {
-    let url = `/goods/list/shop_goods?shopId=shkj&category2=${data.category2}&category3=${data.category3}&pageNum=${data.pageNum}&pageSize=${data.pageSize}`
+    let url = `/goods/list/shop_goods?shopId=${data.category1}&category2=${data.category2}&category3=${data.category3}&pageNum=${data.pageNum}&pageSize=${data.pageSize}`
     if (data.category3 == '') {
-      url = `/goods/list/shop_goods?shopId=shkj&category2=${data.category2}&pageNum=${data.pageNum}&pageSize=${data.pageSize}`
+      url = `/goods/list/shop_goods?shopId=${data.category1}&category2=${data.category2}&pageNum=${data.pageNum}&pageSize=${data.pageSize}`
     }
     return this.request({
       url
@@ -56,9 +56,11 @@ class GoodsModel extends HTTP {
     })
   }
   // 加入购物车
-  SetAddCar(){
+  SetAddCar(data){
     return this.request({
-      url: `/cart/add`,
+      url: `/cart/add?goodsId=${data.goodsId}&num=${data.num}`,
+      // method:"POST",
+      // data
     })
   }
 
@@ -70,9 +72,11 @@ class GoodsModel extends HTTP {
   }
 
   // 修改购物车内商品数量
-  SetUpdateCar() {
+  SetUpdateCar(data) {
     return this.request({
       url: `/cart/update`,
+      method: "POST",
+      data
     })
   }
 
@@ -80,6 +84,15 @@ class GoodsModel extends HTTP {
   SetSettlementCar() {
     return this.request({
       url: `/cart/settlement`,
+    })
+  }
+
+  //搜索商品
+  GetSearchList(data){
+    return this.request({
+      url: `/goods/list/search`,
+      method: "POST",
+      data
     })
   }
 

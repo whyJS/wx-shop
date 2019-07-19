@@ -1,11 +1,11 @@
 <!--pages/address-add/index.wxml-->
 <view class="content">
   <view class="left">收货人</view>
-  <input class="right" bindinput='onName' placeholder='请输入姓名'></input>
+  <input class="right" value="{{name}}" bindinput='onName' placeholder='请输入姓名'></input>
 </view>
 <view class="content">
   <view class="left">联系方式</view>
-  <input class="right" bindinput='onPhone' placeholder='请输入手机号'></input>
+  <input class="right" value="{{phone}}" bindinput='onPhone' placeholder='请输入手机号'></input>
 </view>
 <view class="content">
   <view class="left">所在地区</view>
@@ -16,7 +16,7 @@
 </view>
 <view class="content">
   <view class="left">详细地址</view>
-  <input class="right" bindinput='onAddress' placeholder='街道、小区门牌等详细地址'></input>
+  <input class="right" bindinput='onAddress' value="{{address}}" placeholder='街道、小区门牌等详细地址'></input>
 </view>
 
 
