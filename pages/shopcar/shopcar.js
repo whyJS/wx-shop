@@ -16,11 +16,25 @@ Page({
     this._api_list()
   },
   onAll(){
-    
-    
+    if (this.data.showDelete){
+      return
+    }
+
+    let list = this.data.list
+    for (let i = 0; i < list.length; i++) {
+      list[i].show = true
+    }
+    this.setData({
+      list
+    })
+    this._all()
   },
   //添加商品
   onAdd(e){
+    if (this.data.showDelete) {
+      return
+    }
+
     let val = e.currentTarget.dataset.val
     let index = e.currentTarget.dataset.index
     let list = this.data.list
@@ -48,6 +62,10 @@ Page({
   },
   //减少商品数量
   onDelete(e){
+    if (this.data.showDelete) {
+      return
+    }
+
     let val = e.currentTarget.dataset.val
     let index = e.currentTarget.dataset.index
     let list = this.data.list
@@ -102,6 +120,10 @@ Page({
 
   // 点击选中，或者补选中
   onBtnShow(e){
+    if (this.data.showDelete) {
+      return
+    }
+
     let val = e.currentTarget.dataset.val
     let index = e.currentTarget.dataset.index
     let list = this.data.list

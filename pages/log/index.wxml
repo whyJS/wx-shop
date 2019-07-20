@@ -1,6 +1,6 @@
 <!--pages/login/login.wxml-->
 
-<view wx:if="{{isHide}}">
+<view>
     <view wx:if="{{canIUse}}" >
         <view class='header'>
             <image src='/images/wx_login.png'></image>

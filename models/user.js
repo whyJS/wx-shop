@@ -19,6 +19,15 @@ class UserModel extends HTTP {
     })
   }
 
+  // 微信登陆
+  UserWxLogin(data) {
+    return this.request({
+      url: '/user/auth',
+      method:"POST",
+      data
+    })
+  }
+
 
 }
 

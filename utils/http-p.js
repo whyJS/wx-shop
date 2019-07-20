@@ -3,6 +3,14 @@ import { config } from '../config.js'
 const tips = {
   1: '抱歉，出现了一个错误'
 }
+// let head = {
+//   'content-type': 'application/x-www-form-urlencoded'
+// }
+let token = wx.getStorageSync('_token')
+
+// if (token){
+
+// }
 
 class HTTP{
   request({ url, data = {}, method = 'GET' }) {
@@ -11,15 +19,23 @@ class HTTP{
     })
   }
   _request(url, resolve, reject, data = {}, method = 'GET') {
+    let token = wx.getStorageSync('_token')
     wx.request({
       url: config.api_blink_url + url,
       method: method,
       data: data,
       header: {
-        'content-type': 'application/x-www-form-urlencoded'
+        'content-type': 'application/x-www-form-urlencoded',
+        'go_ticket_header_prefix_':token
       },
       success: (res) => {
         const code = res.statusCode.toString()
+        console.log(res.data.code)
+        if(res.data.code == '9999'){
+          wx.navigateTo({
+            url: '/pages/log/index',
+          })
+        }
         if (code.startsWith('2')) {
           resolve(res.data)
         }
