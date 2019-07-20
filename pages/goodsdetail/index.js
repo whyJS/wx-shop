@@ -30,6 +30,7 @@ Page({
   onOrder(){
     let goods = this.data.goods
     goods.num = 1
+    goods.goodsImg = goods.bigImg
     let arr = [];
     arr.push(goods)
     wx.setStorageSync('_goods', JSON.stringify(arr))

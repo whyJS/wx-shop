@@ -90,7 +90,7 @@ class GoodsModel extends HTTP {
   //搜索商品
   GetSearchList(data){
     return this.request({
-      url: `/goods/list/search`,
+      url: `/goods/list/space_goods`,
       method: "POST",
       data
     })

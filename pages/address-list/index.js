@@ -109,7 +109,7 @@ Page({
       return
     }
     console.log(e.currentTarget.dataset)
-    wx.setStorageSync('address', e.currentTarget.dataset.val)
+    wx.setStorageSync('address', JSON.stringify(e.currentTarget.dataset.val))
 
     wx.navigateBack()
   },

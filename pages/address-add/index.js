@@ -76,10 +76,13 @@ Page({
             break;
         }
       }
+
+      
       wx.setStorageSync('global_cityData', cityArray);
       wx.setStorageSync('global_cityDataCode', cityArrayCode);
     }
-
+    console.log(cityArray)
+    console.log(cityArrayCode)
     that.setData({
       cityArray: cityArray,
       cityArrayCode: cityArrayCode
@@ -186,9 +189,13 @@ Page({
   func_changeCitysChangeColumn: function (e) {
     var that = this;
     var cityArray = that.data.cityArray;
+    var cityArrayCode = that.data.cityArrayCode;
 
     var list1 = []; //存放第二列数据，即市的列
     var list2 = []; //存放第三列数据，即区的列
+    var list1Code = []; //存放第二列数据，即市的列
+    var list1Code = []; //存放第三列数据，即区的列
+
 
     var citysIndex = [];
     //主要是注意地址文件中的字段关系，省、市、区关联的字段有 sheng、di、level
@@ -244,7 +251,7 @@ Page({
         var ssq = cityArray[0][that.data.citysIndex[0]] + list1[that.data.citysIndex[1]] + list2[e.detail.value] + '';
         break;
     }
-
+    console.log(citysIndex)
     that.setData({
       "cityArray[1]": list1,//重新赋值中列数组，即联动了市
       "cityArray[2]": list2,//重新赋值右列数组，即联动了区
@@ -275,6 +282,9 @@ Page({
   },
 
    _api_updata() {
+     console.log(this.data.citysIndex)
+     console.log(this.data.cityArrayCode)
+     console.log(this.data.cityArray)
      addressModel.GetUpdataAddress({
       provinceCode: this.data.cityArrayCode[0][this.data.citysIndex[0]],
       cityCode: this.data.cityArrayCode[1][this.data.citysIndex[1]],

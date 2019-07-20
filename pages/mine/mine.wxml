@@ -23,26 +23,26 @@
       </view>
       <view class="mine_order_v2_list_i2">待付款</view>
     </view>
-    <view data-index="2" bindtap='onOrder' class="mine_order_v2_list">
+    <!-- <view data-index="2" bindtap='onOrder' class="mine_order_v2_list">
       <view class="mine_order_v2_list_i1">
-        <image src="/images/mine/daifahuo.png"></image>
+        <image src="/images/mine/daifahuo.png"></image> -->
         <!-- <view></view> -->
-      </view>
+      <!-- </view>
       <view class="mine_order_v2_list_i2">待发货</view>
-    </view>
-    <view data-index="3" bindtap='onOrder' class="mine_order_v2_list">
+    </view> -->
+    <view data-index="2" bindtap='onOrder' class="mine_order_v2_list">
       <view class="mine_order_v2_list_i1">
         <image src="/images/mine/daishouhuo.png"></image>
         <!-- <view></view> -->
       </view>
       <view class="mine_order_v2_list_i2">待收货</view>
     </view>
-    <view data-index="4" bindtap='onOrder' class="mine_order_v2_list">
+    <view data-index="3" bindtap='onOrder' class="mine_order_v2_list">
       <view class="mine_order_v2_list_i1">
         <image src="/images/mine/daipingjia.png"></image>
         <!-- <view></view> -->
       </view>
-      <view class="mine_order_v2_list_i2">待评价</view>
+      <view class="mine_order_v2_list_i2">已完成</view>
     </view>
     <!-- <view data-index="5" bindtap='onOrder' class="mine_order_v2_list">
       <view class="mine_order_v2_list_i1">

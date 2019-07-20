@@ -138,7 +138,18 @@ Page({
 
   // 去结算
   onJieSuan(){
-    console.log('去结算')
+    let arr = []
+    this.data.list.map((i)=>{
+      if(i.show){
+        arr.push(i)
+      }
+    })
+
+    wx.setStorageSync('_goods', JSON.stringify(arr))
+    wx.navigateTo({
+      url: `/pages/order-created/index?type=1&price=${this.data.totalPrice}`
+    })
+
   },
   // 去结算
   onClear() {

@@ -1,2 +1,6 @@
 <!--pages/rank/rank.wxml-->
-<button bind:tap="onSearch">排行榜</button>
+<!-- <button bind:tap="onSearch">排行榜</button> -->
+
+<view class="xxx">
+  敬请期待
+</view>

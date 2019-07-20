@@ -15,7 +15,7 @@
     <image data-index="{{index}}" data-val="{{item}}" bindtap="onBtnShow" wx:if="{{item.show}}" src="/images/icon/btn2.png"></image>
   </view>
   <view class="car_list_v2">
-    <image src="https://tyigou.haoshichengduo.com/download@2x.png"></image>
+    <image src="{{item.goodsImg}}"></image>
   </view>
   <view class="car_list_v3">
     <view class="car_list_v3_1">{{item.fullName}}</view>

@@ -10,13 +10,18 @@ Page({
     pageSize:10
   },
   onLoad: function (options) {
-    this._api('')
+    this._api(0, this.data.searchCode)
   },
   /**
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
-
+    // 显示加载图标  
+    wx.showLoading({
+      title: '玩命加载中',
+    })
+    this.data.pageNum = this.data.pageNum + 1
+    this._api(1, this.data.searchCode)
   },
   // 点击搜索
   onSearch(){
@@ -28,8 +33,11 @@ Page({
   onConfirm(e){
     this.setData({
       searchCode:e.detail.value,
-      searchShow: false
+      searchShow: false,
+      pageNum:1,
+      list:[]
     })
+    this._api(0,this.data.searchCode)
   },
   // 取消搜索
   onCancel(){
@@ -38,17 +46,27 @@ Page({
     })
   },
   //搜索接口
-  _api(searchText, category1){
+  _api(i,search, category1){
     goodsModel.GetSearchList({
       pageNum: this.data.pageNum,
       pageSize: this.data.pageSize,
-      // searchText,
+      search,
       // category1
     }).then((res) => {
+      wx.hideLoading();
       if (res.result == 200) {
-       this.setData({
-         list:res.data
-       })
+        if (i == 0) {
+          this.setData({
+            list: res.data.content
+          })
+
+        } else {
+          this.setData({
+            list: this.data.list.concat(res.data.content)
+          })
+        }
+
+       
       } else {
         wx.showToast({
           title: res.msg,

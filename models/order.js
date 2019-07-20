@@ -7,18 +7,33 @@ class OrderModel extends HTTP {
     super()
   }
   // 获取订单列表
-  GetOrderList() {
+  GetOrderList(data) {
     return this.request({
-      url: '/order/list'
+      url: '/order/list',
+      method:"POST",
+      data
     })
   }
 
   // 获取订单详情
-  GetOrderDetail() {
+  GetOrderDetail(data) {
     return this.request({
-      url: `/order/detail`
+      url: `/order/detail`,
+      method:"POST",
+      data
     })
   }
+
+  // 创建订单
+  SetGoodsOrder(data) {
+    return this.request({
+      url: `/cart/settlement`,
+      method:'POST',
+      data
+    })
+  }
+
+  
 
 
 }

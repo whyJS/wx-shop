@@ -1,11 +1,13 @@
 // pages/order-created/index.js
+import { OrderModel } from '../../models/order.js'
+const orderModel = new OrderModel()
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    order:{}
   },
 
   /**
@@ -69,5 +71,25 @@ Page({
     wx.navigateTo({
       url: '/pages/address-list/index'
     })
-  }
+  },
+
+  _api() {
+    orderModel.GetOrderDetail({
+      
+    }).then((res) => {
+      if (res.result == 200) {
+        this.setData({
+          order:res.data.data
+        })
+      } else {
+        wx.showToast({
+          title: res.msg,
+          icon: 'none',
+          duration: 2000
+        })
+      }
+
+
+    })
+  },
 })

@@ -2,12 +2,12 @@
 <!-- 地址，有地址 -->
 <view wx:if="{{address}}" class="topAddress" bindtap='onAddress'>
   <view class="topAddressName">
-    <view>收货人：xxxx</view>
-    <view>150****2822</view>
+    <view>收货人：{{address.consignee}}</view>
+    <view>{{address.phone}}</view>
   </view>
   <view class="topAddressContent">
     <image class="topAddressContentImg1" src="/images/icon/order_dingwei.png"></image>
-    <view>收货地址：北京北京市昌平区回龙观街道回龙观新龙城38A7单元1102</view>
+    <view>收货地址：{{address.city}}{{address.province}}{{address.county}}{{address.address}}</view>
     <image class="topAddressContentImg2" src="/images/icon/right1.png"></image>
   </view>
 </view>
@@ -25,7 +25,7 @@
 <!-- 商品 -->
 <view class="goods">
   <view class="goodsItem" wx:for="{{goodsList}}" wx:key="{{index}}">
-    <image class="goodsItemImg" src="https://tyigou.haoshichengduo.com/index_url_0.png"></image>
+    <image class="goodsItemImg" src="{{item.goodsImg}}"></image>
     <view class="goodsItemRight">
       <view class="goodsItemRightName">{{item.fullName}}</view>
       <view class="goodsItemRightGuiGe">规格：{{item.description}}</view>

@@ -28,10 +28,10 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    wx.setTabBarBadge({
-      index: 2,
-      text: '3'
-    })
+    // wx.setTabBarBadge({
+    //   index: 2,
+    //   text: '3'
+    // })
     console.log(options)
     console.log('asasa')
     this._local_address();

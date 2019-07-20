@@ -1,4 +1,7 @@
 // pages/order-created/index.js
+
+import { OrderModel } from '../../models/order.js'
+const orderModel = new OrderModel()
 Page({
 
   /**
@@ -100,5 +103,58 @@ Page({
     wx.navigateTo({
       url: '/pages/address-list/index'
     })
+  },
+  onOrder(){
+    orderModel.SetGoodsOrder({
+      cartList: this.cartList(),
+      addressId:this.data.address.id,
+      kuaidiPrice:0
+    }).then((res) => {
+      if (res.result == 200) {
+        // wx.showToast({
+        //   title: '订单创建成功',
+        //   icon: 'none',
+        //   duration: 2000
+        // })
+        wx.showModal({
+          title: '提示',
+          content: '未能成功支付，敬请期待',
+          success(res) {
+            if (res.confirm) {
+              wx.switchTab({
+                url: '/pages/mine/mine',
+              })
+            } else if (res.cancel) {
+              console.log('用户点击取消')
+            }
+          }
+        })
+
+        // this._api_list()
+        // wx.navigateTo({
+        //   url: '/pages/order-list/index?index=0',
+        // })
+      } else {
+        wx.showToast({
+          title: res.msg,
+          icon: 'none',
+          duration: 2000
+        })
+      }
+
+
+    })
+  },
+  cartList(){
+    let arr = []
+    this.data.goodsList.map((i)=>{
+      let obj = {}
+      obj.num = i.num
+      obj.goodsId = i.goodsId
+      
+      arr.push(obj)
+    })
+
+    return JSON.stringify(arr)
   }
 })
