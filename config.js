@@ -1,5 +1,5 @@
 const config = {
-  api_blink_url: 'http://wx.apricot32.cn',
+  api_blink_url: 'https://wx.apricot32.cn',
   // api_blink_url: 'http://192.168.0.101:9781',
   appkey: 'RdshydjBvcYZhMZC'
 }
