@@ -32,8 +32,13 @@ Page({
 
   // 立即购买
   onOrder(){
+    let goods = this.data.goods
+    goods.num = 1
+    let arr = [];
+    arr.push(goods)
+    wx.setStorageSync('_goods', JSON.stringify(arr))
     wx.navigateTo({
-      url: '/pages/order-created/index'
+      url: `/pages/order-created/index?type=1&price=${goods.realPrice}`
     })
   },
   // 跳转创建订单页面
@@ -80,9 +85,9 @@ Page({
   },
 
   // 商品详情
-  _api_goods(id){
+  _api_goods(goodsId){
     goodsModel.GetGoodsDetailList({
-      id
+      goodsId
     }).then((res) => {
       
       if (res.result == 200) {

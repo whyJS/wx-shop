@@ -44,7 +44,7 @@ class GoodsModel extends HTTP {
   // 商品详情
   GetGoodsDetailList(data) {
     return this.request({
-      url: `/goods/detail?id=${data.id}`,
+      url: `/goods/detail?goodsId=${data.goodsId}`,
     })
   }
 

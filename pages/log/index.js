@@ -14,31 +14,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    var that = this;
-    // 查看是否授权
-    wx.getSetting({
-      success: function (res) {
-        if (res.authSetting['scope.userInfo']) {
-          wx.getUserInfo({
-            success: (res)=> {
-              that.setData({
-                isHide: false,
-                signature: res.signature,
-                rawData: res.rawData
-              });
-
-              that._api_wxLogin()
-            }
-          });
-        } else {
-          // 用户没有授权
-          // 改变 isHide 的值，显示授权页面
-          that.setData({
-            isHide: true
-          });
-        }
-      }
-    });
+   
   },
 
   bindGetUserInfo: function (e) {

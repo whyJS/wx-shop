@@ -26,7 +26,7 @@ class HTTP{
       data: data,
       header: {
         'content-type': 'application/x-www-form-urlencoded',
-        'go_ticket_header_prefix_':token
+        'request-attr-user':token
       },
       success: (res) => {
         const code = res.statusCode.toString()

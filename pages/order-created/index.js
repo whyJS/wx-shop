@@ -5,14 +5,31 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    goodsList:[],
+    type:0,
+    price:0,
+    address:null
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    let goods = wx.getStorageSync('_goods')
+    let address =wx.getStorageSync('address')
+    if(goods){
+      goods = JSON.parse(goods)
+    }
+    if (address){
+      address = JSON.parse(address)
+    }
+    
+    this.setData({
+      goodsList: goods,
+      type: options.type,
+      price: options.price,
+      address: address
+    })
   },
 
   /**
@@ -26,7 +43,19 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
+    let goods = wx.getStorageSync('_goods')
+    let address = wx.getStorageSync('address')
+    if (goods) {
+      goods = JSON.parse(goods)
+    }
+    if (address) {
+      address = JSON.parse(address)
+    }
 
+    this.setData({
+      goodsList: goods,
+      address: address
+    })
   },
 
   /**

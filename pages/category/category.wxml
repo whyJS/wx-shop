@@ -22,7 +22,7 @@
 
     <!--右侧栏-->
     <scroll-view scroll-y="true" bindscrolltolower="scrollBottom" class="scroll_right" scroll-into-view="{{scrollTopId}}" scroll-with-animation="true" bindscroll="scroll">
-      <navigator wx:for="{{goodsList}}" class="nav_left" wx:key="index" url="/pages/goodsdetail/index?id={{item.id}}" class="nav_right"> 
+      <navigator wx:for="{{goodsList}}" class="nav_left" wx:key="index" url="/pages/goodsdetail/index?id={{item.goodsId}}" class="nav_right"> 
         <image src="{{item.bigImg}}"></image>
         <view class="nav_right_wrapper">
           <view class="nav_right_wrapper_d1">{{item.fullName}}</view>
