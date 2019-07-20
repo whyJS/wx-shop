@@ -105,6 +105,14 @@ Page({
     })
   },
   onOrder(){
+    if (!this.data.address.id){
+      wx.showToast({
+          title: '请选择收获地址',
+          icon: 'none',
+          duration: 2000
+        })
+      return
+    }
     orderModel.SetGoodsOrder({
       cartList: this.cartList(),
       addressId:this.data.address.id,

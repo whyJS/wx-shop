@@ -87,9 +87,9 @@ Page({
   },
   onOrderDetail(e){
     let val = e.currentTarget.dataset.val
-    wx.navigateTo({
-      url: `/pages/order-detail/index?id=${val.id}`,
-    })
+    // wx.navigateTo({
+    //   url: `/pages/order-detail/index?id=${val.orderId}`,
+    // })
   },
 
   _api_list(i){

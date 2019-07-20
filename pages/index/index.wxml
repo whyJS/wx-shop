@@ -12,7 +12,7 @@
 <view class="zhanwei"></view>
 
 <!-- 顶部轮播 -->
-<swiper autoplay="true" indicator-dots="true" class="swiperContent">
+<swiper autoplay="{{true}}" indicator-dots="true" class="swiperContent">
   <block wx:for="{{imgUrls}}" wx:key="item" bind:tap="onImgClick">
     <swiper-item>
       <image src="{{item.bannerUrl}}" class="slide-image"/>

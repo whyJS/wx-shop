@@ -10,14 +10,14 @@
 <!-- 订单列表 -->
 <view wx:for="{{list}}" wx:key="{{index}}" class="order_list" >
   <!-- 商品 -->
-  <view class="goodsItem" bindtap='onOrderDetail' data-val="{{val}}" wx:for="{{item.goodsList}}" wx:for-index="i" wx:for-item="val">
-    <image class="goodsItemImg" src="{{val.goodsImg}}"></image>
+  <view class="goodsItem" bindtap='onOrderDetail' data-val="{{item}}" wx:for="{{item.goodsList}}" wx:for-index="i" wx:for-item="val">
+    <image class="goodsItemImg" src="{{val.smallImg}}"></image>
     <view class="goodsItemRight">
-      <view class="goodsItemRightName">{{val.fullName}}</view>
+      <view class="goodsItemRightName">{{val.tinyName}}</view>
       <view class="goodsItemRightGuiGe">规格：{{val.description}}</view>
       <view class="goodsItemRightNum">
         <view class="goodsItemRightNumMoney">¥{{val.realPrice}}</view>
-        <view class="goodsItemRightNumShuLiang">x{{val.num}}</view>
+        <view class="goodsItemRightNumShuLiang">x{{val.buyNum}}</view>
       </view>
     </view>
   </view>
