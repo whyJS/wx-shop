@@ -31,11 +31,11 @@ class HTTP{
       success: (res) => {
         const code = res.statusCode.toString()
         console.log(res.data.code)
-        if(res.data.code == '9999'){
-          wx.navigateTo({
-            url: '/pages/log/index',
-          })
-        }
+        // if(res.data.code == '9999'){
+        //   wx.navigateTo({
+        //     url: '/pages/log/index',
+        //   })
+        // }
         if (code.startsWith('2')) {
           resolve(res.data)
         }

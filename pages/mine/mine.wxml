@@ -12,45 +12,45 @@
 <view class="mine_order">
   <view class="mine_order_v1">
     <view class="mine_order_v1_d1">我的订单</view>
-    <view class="mine_order_v1_d2" bindtap='onOrder'>全部订单 <image src="/images/icon/right1.png"></image></view>
+    <view class="mine_order_v1_d2" data-index="0" bindtap='onOrder'>全部订单 <image src="/images/icon/right1.png"></image></view>
   </view>
 
   <view class="mine_order_v2">
-    <view class="mine_order_v2_list">
+    <view data-index="1" bindtap='onOrder' class="mine_order_v2_list">
       <view class="mine_order_v2_list_i1">
         <image src="/images/mine/daifukuan.png"></image>
-        <view>1</view>
+        <!-- <view>1</view> -->
       </view>
       <view class="mine_order_v2_list_i2">待付款</view>
     </view>
-    <view class="mine_order_v2_list">
+    <view data-index="2" bindtap='onOrder' class="mine_order_v2_list">
       <view class="mine_order_v2_list_i1">
         <image src="/images/mine/daifahuo.png"></image>
-        <view></view>
+        <!-- <view></view> -->
       </view>
       <view class="mine_order_v2_list_i2">待发货</view>
     </view>
-    <view class="mine_order_v2_list">
+    <view data-index="3" bindtap='onOrder' class="mine_order_v2_list">
       <view class="mine_order_v2_list_i1">
         <image src="/images/mine/daishouhuo.png"></image>
-        <view></view>
+        <!-- <view></view> -->
       </view>
       <view class="mine_order_v2_list_i2">待收货</view>
     </view>
-    <view class="mine_order_v2_list">
+    <view data-index="4" bindtap='onOrder' class="mine_order_v2_list">
       <view class="mine_order_v2_list_i1">
         <image src="/images/mine/daipingjia.png"></image>
-        <view></view>
+        <!-- <view></view> -->
       </view>
       <view class="mine_order_v2_list_i2">待评价</view>
     </view>
-    <view class="mine_order_v2_list">
+    <!-- <view data-index="5" bindtap='onOrder' class="mine_order_v2_list">
       <view class="mine_order_v2_list_i1">
         <image src="/images/mine/shouhou.png"></image>
         <view></view>
       </view>
       <view class="mine_order_v2_list_i2">退款/售后</view>
-    </view>
+    </view> -->
   </view>
 </view>
 

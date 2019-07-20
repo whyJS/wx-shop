@@ -66,15 +66,16 @@ Page({
 
   // 我的地址
   onAddress() {
-    console.log('asasa')
+    
     wx.navigateTo({
       url: '/pages/address-list/index?type=1',
     })
   },
   // 全部订单
-  onOrder() {
+  onOrder(e) {
+    console.log(e)
     wx.navigateTo({
-      url: '/pages/order-list/index?index=2',
+      url: `/pages/order-list/index?index=${e.currentTarget.dataset.index}`,
     })
   },
   // 拨打电话

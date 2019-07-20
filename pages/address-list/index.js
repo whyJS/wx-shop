@@ -8,7 +8,7 @@ Page({
    */
   data: {
     type:0,
-    list:[1]
+    list:[]
   },
 
   /**

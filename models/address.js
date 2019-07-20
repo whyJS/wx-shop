@@ -15,9 +15,10 @@ class AddressModel extends HTTP {
 
   // 新增收获地址
   GetAddAddress(data) {
+    // url: `/user/address/save?provinceCode=${data.provinceCode}&cityCode=${data.cityCode}&countyCode=${data.countyCode}&address=${data.address}&phone=${data.phone}&consignee=${data.consignee}`,
     return this.request({
-      url: `/user/address/save?provinceCode=${data.provinceCode}&cityCode=${data.cityCode}&countyCode=${data.countyCode}&address=${data.address}&phone=${data.phone}&consignee=${data.consignee}`,
-      method: 'POST',
+      url: `/user/address/save`,
+      method:'POST',
       data
     })
     // return this.request({
