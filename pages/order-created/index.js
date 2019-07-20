@@ -17,6 +17,8 @@ Page({
   onLoad: function (options) {
     let goods = wx.getStorageSync('_goods')
     let address =wx.getStorageSync('address')
+    console.log(goods)
+    console.log(address)
     if(goods){
       goods = JSON.parse(goods)
     }

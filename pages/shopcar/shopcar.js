@@ -166,6 +166,9 @@ Page({
   _api_list(){
     goodsModel.GetCarList().then((res)=>{
       if (res.result == 200) {
+        if (res.data.goodsList == null){
+          res.data.goodsList = []
+        }
         for (let i = 0; i < res.data.goodsList.length; i++) {
           res.data.goodsList[i].show = true
           res.data.goodsList[i].deleteShow = false

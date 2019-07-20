@@ -32,6 +32,7 @@ class AddressModel extends HTTP {
   GetUpdataAddress(data) {
     return this.request({
       url: '/user/address/update',
+      method: 'POST',
       data
     })
   }
@@ -44,6 +45,15 @@ class AddressModel extends HTTP {
       data
     })
   }
+  // 设置默认地址地址
+  GetDefaultAddress(data) {
+    return this.request({
+      url: '/user/address/default',
+      method: 'POST',
+      data
+    })
+  }
+
 
 
 

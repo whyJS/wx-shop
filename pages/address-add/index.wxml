@@ -16,7 +16,7 @@
 </view>
 <view class="content">
   <view class="left">详细地址</view>
-  <input class="right" bindinput='onAddress' value="{{address}}" placeholder='街道、小区门牌等详细地址'></input>
+  <input class="right" bindinput='onAddress' value="{{addressdetail}}" placeholder='街道、小区门牌等详细地址'></input>
 </view>
 
 

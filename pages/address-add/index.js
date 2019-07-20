@@ -14,7 +14,8 @@ Page({
     name:'',
     phone:'',
     addressdetail:'',
-    ssq:'请选择'
+    ssq:'请选择',
+    type:0
   },
 
   /**
@@ -26,7 +27,10 @@ Page({
       this.data.type = 1
       this.setData({
         type: 1,
-        name: options.name
+        name: options.name,
+        phone: options.phone,
+        addressdetail: options.address,
+        id: options.id
       });
     }
 
@@ -155,8 +159,12 @@ Page({
       })
       return
     }
-
-    this._api_add()
+    if(this.data.type==1){
+      this._api_updata()
+    }else{
+      this._api_add()
+    }
+   
   },
 
 
@@ -253,6 +261,29 @@ Page({
       phone: this.data.phone,
       consignee: this.data.name
     }).then((res)=>{
+      if (res.result == 200) {
+        wx.navigateBack()
+
+      } else {
+        wx.showToast({
+          title: res.msg,
+          icon: 'none',
+          duration: 2000
+        })
+      }
+    })
+  },
+
+   _api_updata() {
+     addressModel.GetUpdataAddress({
+      provinceCode: this.data.cityArrayCode[0][this.data.citysIndex[0]],
+      cityCode: this.data.cityArrayCode[1][this.data.citysIndex[1]],
+      countyCode: this.data.cityArrayCode[2][this.data.citysIndex[2]],
+      address: this.data.addressdetail,
+      phone: this.data.phone,
+      consignee: this.data.name,
+      id:this.data.id
+    }).then((res) => {
       if (res.result == 200) {
         wx.navigateBack()
 

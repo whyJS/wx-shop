@@ -4,7 +4,7 @@
 <swiper autoplay="true" indicator-dots="true" class="swiperContent">
   <block wx:for="{{imgUrls}}" wx:key="item" bind:tap="onImgClick">
     <swiper-item>
-      <image src="{{item}}" class="slide-image"/>
+      <image src="{{item.imgUrl}}" class="slide-image"/>
     </swiper-item>
   </block>
 </swiper>
@@ -33,7 +33,7 @@
 <view class="canshu">
   <text>商品参数：</text>
   <!-- <text class="t2">“须臾”</text> -->
-  <text class="t2">“{{remark}}”</text>
+  <text class="t2">“{{goods.remark}}”</text>
 </view>
 <!-- 灰色站位 -->
 <view class="zhanwei"></view>
@@ -87,7 +87,7 @@
   <view class="goods_header">
     宝贝详情
   </view>
-  <image mode="widthFix" class="baobei_img" wx:for="{{imgUrls}}" wx:key="item" src="{{item}}"></image>
+  <image mode="widthFix" class="baobei_img" wx:for="{{imgUrls}}" wx:key="item" src="{{item.imgUrl}}"></image>
 </view>
 
 <!-- 底部导航 -->
