@@ -124,18 +124,24 @@ Page({
         //   icon: 'none',
         //   duration: 2000
         // })
-        wx.showModal({
-          title: '提示',
-          content: '未能成功支付，敬请期待',
-          success(res) {
-            if (res.confirm) {
-              wx.switchTab({
-                url: '/pages/mine/mine',
-              })
-            } else if (res.cancel) {
-              console.log('用户点击取消')
-            }
-          }
+        // wx.showModal({
+        //   title: '提示',
+        //   content: '未能成功支付，敬请期待',
+        //   success(res) {
+        //     if (res.confirm) {
+        //       wx.switchTab({
+        //         url: '/pages/mine/mine',
+        //       })
+        //     } else if (res.cancel) {
+        //       console.log('用户点击取消')
+        //     }
+        //   }
+        // })
+
+        orderModel.payGoodsOrder({
+
+        }).then((res)=>{
+          console.log(res)
         })
 
         // this._api_list()

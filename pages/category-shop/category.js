@@ -67,6 +67,7 @@ Page({
       title: '玩命加载中',
     })
     this.data.pageNum++;
+    console.log(this.data)
     if (this.data.leftList[this.data.leftIndex].list) {
       this._api_goods(this.data.shopid, this.data.leftList[this.data.leftIndex].code, this.data.leftList[this.data.leftIndex].sublist[this.data.leftIndexSmall].code, 1)
     } else {

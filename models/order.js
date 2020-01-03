@@ -33,6 +33,15 @@ class OrderModel extends HTTP {
     })
   }
 
+  // 获取支付订单信息
+
+  payGoodsOrder(data) {
+    return this.request({
+      url: `/pay/weixinpay`,
+      method: 'POST',
+      data
+    })
+  }
   
 
 

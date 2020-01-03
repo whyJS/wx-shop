@@ -1,7 +1,7 @@
 const config = {
   // api_blink_url: 'https://wx.apricot32.cn',
   // api_blink_url: 'http://192.168.0.101:9781',
-  api_blink_url:'https://guozunfugui.com',
+  api_blink_url:'https://wx.guozunfugui.com',
   appkey: 'RdshydjBvcYZhMZC'
 }
 // 百度key

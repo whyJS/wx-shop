@@ -73,7 +73,8 @@ Page({
     
 
     this.data.pageNum++;
-    if (this.data.leftList[this.data.leftIndex].list){
+    console.log(this.data)
+    if (this.data.leftList[this.data.leftIndex].list.length){
       this._api_goods(this.data.pcode, this.data.leftList[this.data.leftIndex].code, this.data.leftList[this.data.leftIndex].list[this.data.leftIndexSmall].code, 1)
     }else{
       this._api_goods(this.data.pcode, this.data.leftList[this.data.leftIndex].code, '', 1)
