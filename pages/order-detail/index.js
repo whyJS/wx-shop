@@ -7,6 +7,8 @@ Page({
    * 页面的初始数据
    */
   data: {
+    id:'',
+    status:'',
     order:{}
   },
 
@@ -14,14 +16,19 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    this.data.id = options.id
+    this.data.status = options.status
   },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-
+    this.setData({
+      id: this.data.id,
+      status: this.data.status
+    })
+    this._api()
   },
 
   /**
@@ -75,11 +82,11 @@ Page({
 
   _api() {
     orderModel.GetOrderDetail({
-      
+      orderId:this.data.id
     }).then((res) => {
       if (res.result == 200) {
         this.setData({
-          order:res.data.data
+          order:res.data
         })
       } else {
         wx.showToast({
@@ -92,4 +99,19 @@ Page({
 
     })
   },
+
+  //微信支付
+  onOrder(){
+    wx.showModal({
+      title: '提示',
+      content: '支付尚未开通，敬请期待',
+      success(res) {
+        if (res.confirm) {
+
+        } else if (res.cancel) {
+          console.log('用户点击取消')
+        }
+      }
+    })
+  }
 })

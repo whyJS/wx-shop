@@ -25,7 +25,7 @@ Page({
         signature: e.detail.signature,
         rawData: e.detail.rawData
       });
-
+      console.log(e)
       that._api_wxLogin()
 
     } else {
@@ -47,7 +47,9 @@ Page({
 
   bindBackView() {
     if (getCurrentPages().length > 1) {
-      wx.navigateBack()
+      wx.switchTab({
+        url: '/pages/index/index'
+      })
     } else {
       wx.switchTab({
         url: '/pages/index/index'
@@ -66,7 +68,7 @@ Page({
           signature: this.data.signature
 
         }).then((res)=>{
-          wx.setStorageSync('_token', JSON.stringify(res.data))
+          wx.setStorageSync('_token', res.data)
           this.bindBackView()
         })
       }
@@ -91,7 +93,8 @@ Page({
    * 生命周期函数--监听页面隐藏
    */
   onHide: function () {
-
+    console.log('清空')
+    wx.setStorageSync('_resert', '')
   },
 
   /**

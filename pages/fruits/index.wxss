@@ -17,11 +17,11 @@ page{
 
 .swiperContent{
   width: 750rpx;
-  height: 350rpx;
+  height: 250rpx;
 }
 .slide-image{
   width: 750rpx;
-  height: 350rpx;
+  height: 250rpx;
 }
 
 

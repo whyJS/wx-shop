@@ -1,7 +1,7 @@
 <!--pages/address-list/index.wxml-->
 <view class="addressList"  wx:for="{{list}}" wx:key="{{index}}">
   <view data-index="index" data-val="{{item}}" bindtap="onClick" class="addressListTop">
-    <view class="addressListTopTitle">{{item.city}}{{item.province}}{{item.county}}{{item.address}}</view>
+    <view class="addressListTopTitle">{{item.province}}{{item.city?item.city:''}}{{item.county}}{{item.address}}</view>
     <view class="addressListTopUser">
       <text class="addressListTopUserName">{{item.consignee}}</text>
       <text class="addressListTopUserPhone">{{item.phone}}</text>

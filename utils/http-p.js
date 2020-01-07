@@ -20,6 +20,7 @@ class HTTP{
   }
   _request(url, resolve, reject, data = {}, method = 'GET') {
     let token = wx.getStorageSync('_token')
+    let _resert = wx.getStorageSync('_resert')
     console.log(token)
     wx.request({
       url: config.api_blink_url + url,
@@ -32,10 +33,16 @@ class HTTP{
       success: (res) => {
         const code = res.statusCode.toString()
         console.log(res.data.code)
+        
         if(res.data.code == '9999'){
+          if (_resert){
+            return
+          }
+          wx.setStorageSync('_resert', '已有')
           wx.navigateTo({
             url: '/pages/log/index',
           })
+
         }
         if (code.startsWith('2')) {
           resolve(res.data)

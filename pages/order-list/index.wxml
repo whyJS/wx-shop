@@ -24,9 +24,9 @@
   <!-- 合计 -->
   <view class="heji">合计：￥{{item.totalPrice}}（含邮费）</view>
   <!-- 按钮 -->
-  <view class="anniu">
+  <view class="anniu" >
     <text>取消订单</text>
-    <text class="t1">付款</text>
+    <text bindtap="payOrder" data-val="{{item}}" class="t1">付款</text>
   </view>
 </view>
 

@@ -97,10 +97,10 @@
       <image src="/images/icon/dianpu.png" bindtap="onShop"></image>
       <view class="foot1_list_v1">店铺</view>
     </view>
-    <view class="foot1_list">
+    <!-- <view class="foot1_list">
       <image src="/images/icon/guanzhu.png"></image>
       <view class="foot1_list_v1">收藏</view>
-    </view>
+    </view> -->
     <view class="foot1_list" bindtap="onCar" >
       <image src="/images/icon/gouwuche.png"></image>
       <view class="foot1_list_v1">购物车</view>

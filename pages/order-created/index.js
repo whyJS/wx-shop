@@ -119,29 +119,80 @@ Page({
       kuaidiPrice:0
     }).then((res) => {
       if (res.result == 200) {
-        // wx.showToast({
-        //   title: '订单创建成功',
-        //   icon: 'none',
-        //   duration: 2000
-        // })
-        // wx.showModal({
-        //   title: '提示',
-        //   content: '未能成功支付，敬请期待',
-        //   success(res) {
-        //     if (res.confirm) {
-        //       wx.switchTab({
-        //         url: '/pages/mine/mine',
-        //       })
-        //     } else if (res.cancel) {
-        //       console.log('用户点击取消')
-        //     }
-        //   }
-        // })
-
+        wx.showToast({
+          title: '订单创建成功',
+          icon: 'none',
+          duration: 2000
+        })
+        wx.showModal({
+          title: '提示',
+          content: '未能成功支付，敬请期待',
+          success(res) {
+            if (res.confirm) {
+              // wx.switchTab({
+              //   url: '/pages/mine/mine',
+              // })
+            } else if (res.cancel) {
+              console.log('用户点击取消')
+            }
+          }
+        })
+        return
         orderModel.payGoodsOrder({
+          orderId:res.data
+        }).then((r)=>{
+          console.log(r)
+          wx.requestPayment(
+            {
+              'timeStamp': r.data.timeStamp,
+              'nonceStr': r.data.nonceStr,
+              'package': r.data.prepayPackage,
+              'signType': 'MD5',
+              'paySign': r.data.paySign,
+              'success': function (ee) { 
+                wx.showToast({
+                  title: '支付成功',
+                  icon: 'success',
+                  duration: 3000
+                });
+                wx.showModal({
+                  title: '提示',
+                  content: '支付成功',
+                  success(res) {
+                    if (res.confirm) {
+                      wx.redirectTo({
+                        url: `/pages/pay-success/index`
+                      })
+                    } else if (res.cancel) {
+                      console.log('用户点击取消')
+                    }
+                  }
+                })
+                
+              },
+              'fail': function (res) {
+                if (res.errMsg == 'requestPayment:fail cancel') {
+                  wx.showToast({
+                    title: '您已取消支付',
+                    icon: 'none',
+                    duration: 3000
+                  });
 
-        }).then((res)=>{
-          console.log(res)
+                } else {
+                  console.log('res.errMsg');
+                  wx.showToast({
+                    title: '支付失败',
+                    icon: 'none',
+                    duration: 3000
+                  });
+                  
+                }
+               },
+              'complete': function (res) {
+                console.log(res)
+                console.log('结束')
+               }
+            })
         })
 
         // this._api_list()

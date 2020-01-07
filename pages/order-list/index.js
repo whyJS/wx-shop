@@ -87,9 +87,10 @@ Page({
   },
   onOrderDetail(e){
     let val = e.currentTarget.dataset.val
-    // wx.navigateTo({
-    //   url: `/pages/order-detail/index?id=${val.orderId}`,
-    // })
+    console.log(e)
+    wx.navigateTo({
+      url: `/pages/order-detail/index?id=${val.orderId}&status=${val.status}`,
+    })
   },
 
   _api_list(i){
@@ -133,5 +134,80 @@ Page({
     } else if (this.data.topListIndex == 3) {
       return 10
     }
+  },
+  //支付
+  payOrder(){
+    console.log('asasas')
+    wx.showModal({
+      title: '提示',
+      content: '支付尚未开通，敬请期待',
+      success(res) {
+        if (res.confirm) {
+          
+        } else if (res.cancel) {
+          console.log('用户点击取消')
+        }
+      }
+    })
+    return
+
+
+    orderModel.payGoodsOrder({
+      orderId: res.data
+    }).then((r) => {
+      console.log(r)
+      wx.requestPayment(
+        {
+          'timeStamp': r.data.timeStamp,
+          'nonceStr': r.data.nonceStr,
+          'package': r.data.prepayPackage,
+          'signType': 'MD5',
+          'paySign': r.data.paySign,
+          'success': function (ee) {
+            wx.showToast({
+              title: '支付成功',
+              icon: 'success',
+              duration: 3000
+            });
+            // wx.showModal({
+            //   title: '提示',
+            //   content: '支付成功',
+            //   success(res) {
+            //     if (res.confirm) {
+            //       wx.redirectTo({
+            //         url: `/pages/pay-success/index`
+            //       })
+            //     } else if (res.cancel) {
+            //       console.log('用户点击取消')
+            //     }
+            //   }
+            // })
+
+          },
+          'fail': function (res) {
+            if (res.errMsg == 'requestPayment:fail cancel') {
+              wx.showToast({
+                title: '您已取消支付',
+                icon: 'none',
+                duration: 3000
+              });
+
+            } else {
+              console.log('res.errMsg');
+              wx.showToast({
+                title: '支付失败',
+                icon: 'none',
+                duration: 3000
+              });
+
+            }
+          },
+          'complete': function (res) {
+            console.log(res)
+            console.log('结束')
+          }
+        })
+    })
+
   }
 })

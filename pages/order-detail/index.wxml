@@ -1,6 +1,6 @@
 <!--pages/order-created/index.wxml-->
 <!-- 待支付状态 -->
-<view class="order_top">
+<!-- <view class="order_top">
 <image class="order_top_image3" src="/images/beijing.png"></image>
   <view class="order_top_v1">
     <image src="/images/gantanhao.png"></image>
@@ -10,17 +10,17 @@
     剩余：59分钟
   </view>
   
-</view>
+</view> -->
 
 <!-- 地址，有地址 -->
 <view class="topAddress">
   <view class="topAddressName">
-    <view>收货人：xxxx</view>
-    <view>150****2822</view>
+    <view>收货人：{{order.receiverInfo?order.receiverInfo.name:''}}</view>
+    <view>{{order.receiverInfo?order.receiverInfo.name:''}}</view>
   </view>
   <view class="topAddressContent">
     <image class="topAddressContentImg1" src="/images/icon/order_dingwei.png"></image>
-    <view>收货地址：北京北京市昌平区回龙观街道回龙观新龙城38A7单元1102</view>
+    <view>收货地址：{{order.receiverInfo?order.receiverInfo.address:''}}</view>
     <image class="topAddressContentImg2" src="/images/icon/right1.png"></image>
   </view>
 </view>
@@ -29,42 +29,23 @@
 <image class="fengexian" src="/images/icon/fengexian.png"></image>
 
 <!-- 商品 -->
-<view class="goods">
-  <view class="goodsItem">
-    <image class="goodsItemImg" src="https://tyigou.haoshichengduo.com/index_url_0.png"></image>
-    <view class="goodsItemRight">
-      <view class="goodsItemRightName">晨光中性替芯 全针管中心笔替芯12支HAGR0121黑0.35</view>
-      <view class="goodsItemRightGuiGe">规格：0.5mm黑色替芯桶装12支</view>
-      <view class="goodsItemRightNum">
-        <view class="goodsItemRightNumMoney">¥7.5</view>
-        <view class="goodsItemRightNumShuLiang">x2</view>
+<view class="goods" wx:if="{{order&&order.shopList}}">
+  <view wx:for="{{order.shopList}}" wx:key="{{index}}">
+    <view wx:for="{{item.goodsList}}" wx:for-item="i" class="goodsItem" wx:for-index="num" wx:key="{{num}}">
+      <image class="goodsItemImg" src="{{i.smallImg}}"></image>
+      <view class="goodsItemRight">
+        <view class="goodsItemRightName">{{i.tinyName}}</view>
+        <view class="goodsItemRightGuiGe">规格：{{i.description}}</view>
+        <view class="goodsItemRightNum">
+          <view class="goodsItemRightNumMoney">¥{{i.realPrice}}</view>
+          <view class="goodsItemRightNumShuLiang">x{{i.buyNum}}</view>
+        </view>
       </view>
     </view>
   </view>
-  <view class="goodsItem">
-    <image class="goodsItemImg" src="https://tyigou.haoshichengduo.com/index_url_0.png"></image>
-    <view class="goodsItemRight">
-      <view class="goodsItemRightName">晨光中性替芯 全针管中心笔替芯12支HAGR0121黑0.35</view>
-      <view class="goodsItemRightGuiGe">规格：0.5mm黑色替芯桶装12支</view>
-      <view class="goodsItemRightNum">
-        <view class="goodsItemRightNumMoney">¥7.5</view>
-        <view class="goodsItemRightNumShuLiang">x2</view>
-      </view>
-    </view>
-  </view>
-  <view class="goodsItem">
-    <image class="goodsItemImg" src="https://tyigou.haoshichengduo.com/index_url_0.png"></image>
-    <view class="goodsItemRight">
-      <view class="goodsItemRightName">晨光中性替芯 全针管中心笔替芯12支HAGR0121黑0.35</view>
-      <view class="goodsItemRightGuiGe">规格：0.5mm黑色替芯桶装12支</view>
-      <view class="goodsItemRightNum">
-        <view class="goodsItemRightNumMoney">¥7.5</view>
-        <view class="goodsItemRightNumShuLiang">x2</view>
-      </view>
-    </view>
-  </view>
+  
 
-  <view class="fahuo">
+  <view wx:if="{{status == 0 }}" class="fahuo">
     支付成功后会尽快为您发货
   </view>
 </view>
@@ -78,19 +59,19 @@
 <view class="feiyong">
   <view class="feiyong_item">
     <view>商品总额</view>
-    <view>¥7.5</view>
+    <view>¥{{order.totalPrice}}</view>
   </view>
   <view class="feiyong_item">
     <view>优惠</view>
-    <view class="feiyong_item_red">-¥7.5</view>
+    <view class="feiyong_item_red">-¥0.00</view>
   </view>
   <view class="feiyong_item">
     <view>运费</view>
-    <view class="feiyong_item_red">¥7.5</view>
+    <view class="feiyong_item_red">¥{{order.yunfei?order.yunfei:'0.00'}}</view>
   </view>
   <view class="feiyong_item">
     <view>订单总价</view>
-    <view>¥7.5</view>
+    <view>¥{{order.totalPrice}}</view>
   </view>
   <view class="feiyong_item">
     <view>支付方式</view>
@@ -100,13 +81,13 @@
 
 <view class="feiyong2">
   <view class="feiyong2_item">
-    <view>订单编号：854153443154</view>
+    <view>订单编号：{{order.orderId?order.orderId:''}}</view>
   </view>
   <view class="feiyong2_item">
-    <view>订单日期：2018-03-23  14：45：53</view>
+    <view>订单日期：{{order.createTime?order.createTime:''}}</view>
   </view>
   <view class="feiyong2_item">
-    <view>订单备注：无</view>
+    <view>订单备注：{{order.remark?order.remark:''}}</view>
   </view>
   <view class="feiyong2_item">
     <view>发票类型：不需要发票</view>
@@ -117,10 +98,10 @@
 
 
 <!-- 底部导航 -->
-<view class="foot">
+<view wx:if="{{status == 0 }}" class="foot">
   <view class="foot1">
     <text class="foot1_t1">合计金额：</text>
-    <text class="foot1_t2">¥59.99</text>
+    <text class="foot1_t2">¥{{order.totalPrice}}</text>
     
   </view>
   <view class="foot3" bindtap='onOrder'>微信支付</view>

@@ -5,21 +5,24 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    num:''
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    console.log(options)
+    this.data.num=options.num
   },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-
+    this.setData({
+      num: this.data.num
+    })
   },
 
   /**
@@ -62,5 +65,15 @@ Page({
    */
   onShareAppMessage: function () {
 
+  },
+  order(){
+    wx.switchTab({
+      url: '/pages/mine/mine'
+    })
+  },
+  home(){
+    wx.switchTab({
+      url: '/pages/index/index'
+    })
   }
 })

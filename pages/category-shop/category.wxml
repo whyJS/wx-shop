@@ -30,69 +30,6 @@
           <view class="nav_right_wrapper_d3">¥{{item.realPrice}}</view>
         </view>
       </navigator>
-      <navigator wx:for="{{goodsList}}" class="nav_left" wx:key="index" url="/pages/goodsdetail/index?id={{item.goodsId}}" class="nav_right"> 
-        <image src="{{item.bigImg}}"></image>
-        <view class="nav_right_wrapper">
-          <view class="nav_right_wrapper_d1">{{item.fullName}}</view>
-          <!-- <view class="nav_right_wrapper_d2">66382评论    好评率100%</view> -->
-          <view class="nav_right_wrapper_d2">好评率100%</view>
-          <view class="nav_right_wrapper_d3">¥{{item.realPrice}}</view>
-        </view>
-      </navigator>
-      <navigator wx:for="{{goodsList}}" class="nav_left" wx:key="index" url="/pages/goodsdetail/index?id={{item.goodsId}}" class="nav_right"> 
-        <image src="{{item.bigImg}}"></image>
-        <view class="nav_right_wrapper">
-          <view class="nav_right_wrapper_d1">{{item.fullName}}</view>
-          <!-- <view class="nav_right_wrapper_d2">66382评论    好评率100%</view> -->
-          <view class="nav_right_wrapper_d2">好评率100%</view>
-          <view class="nav_right_wrapper_d3">¥{{item.realPrice}}</view>
-        </view>
-      </navigator>
-      <navigator wx:for="{{goodsList}}" class="nav_left" wx:key="index" url="/pages/goodsdetail/index?id={{item.goodsId}}" class="nav_right"> 
-        <image src="{{item.bigImg}}"></image>
-        <view class="nav_right_wrapper">
-          <view class="nav_right_wrapper_d1">{{item.fullName}}</view>
-          <!-- <view class="nav_right_wrapper_d2">66382评论    好评率100%</view> -->
-          <view class="nav_right_wrapper_d2">好评率100%</view>
-          <view class="nav_right_wrapper_d3">¥{{item.realPrice}}</view>
-        </view>
-      </navigator>
-      <navigator wx:for="{{goodsList}}" class="nav_left" wx:key="index" url="/pages/goodsdetail/index?id={{item.goodsId}}" class="nav_right"> 
-        <image src="{{item.bigImg}}"></image>
-        <view class="nav_right_wrapper">
-          <view class="nav_right_wrapper_d1">{{item.fullName}}</view>
-          <!-- <view class="nav_right_wrapper_d2">66382评论    好评率100%</view> -->
-          <view class="nav_right_wrapper_d2">好评率100%</view>
-          <view class="nav_right_wrapper_d3">¥{{item.realPrice}}</view>
-        </view>
-      </navigator>
-      <navigator wx:for="{{goodsList}}" class="nav_left" wx:key="index" url="/pages/goodsdetail/index?id={{item.goodsId}}" class="nav_right"> 
-        <image src="{{item.bigImg}}"></image>
-        <view class="nav_right_wrapper">
-          <view class="nav_right_wrapper_d1">{{item.fullName}}</view>
-          <!-- <view class="nav_right_wrapper_d2">66382评论    好评率100%</view> -->
-          <view class="nav_right_wrapper_d2">好评率100%</view>
-          <view class="nav_right_wrapper_d3">¥{{item.realPrice}}</view>
-        </view>
-      </navigator>
-      <navigator wx:for="{{goodsList}}" class="nav_left" wx:key="index" url="/pages/goodsdetail/index?id={{item.goodsId}}" class="nav_right"> 
-        <image src="{{item.bigImg}}"></image>
-        <view class="nav_right_wrapper">
-          <view class="nav_right_wrapper_d1">{{item.fullName}}</view>
-          <!-- <view class="nav_right_wrapper_d2">66382评论    好评率100%</view> -->
-          <view class="nav_right_wrapper_d2">好评率100%</view>
-          <view class="nav_right_wrapper_d3">¥{{item.realPrice}}</view>
-        </view>
-      </navigator>
-      <navigator wx:for="{{goodsList}}" class="nav_left" wx:key="index" url="/pages/goodsdetail/index?id={{item.goodsId}}" class="nav_right"> 
-        <image src="{{item.bigImg}}"></image>
-        <view class="nav_right_wrapper">
-          <view class="nav_right_wrapper_d1">{{item.fullName}}</view>
-          <!-- <view class="nav_right_wrapper_d2">66382评论    好评率100%</view> -->
-          <view class="nav_right_wrapper_d2">好评率100%</view>
-          <view class="nav_right_wrapper_d3">¥{{item.realPrice}}</view>
-        </view>
-      </navigator>
     </scroll-view>
   </view>
 </view>

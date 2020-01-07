@@ -68,7 +68,7 @@
     </view>
   </view>
   <!-- 我的收藏 -->
-  <view class="mine_list_item">
+  <!-- <view class="mine_list_item">
     <view class="mine_list_item_v1">
       <image src="/images/mine/shoucang.png"></image>
     </view>
@@ -77,7 +77,7 @@
       <view></view>
       <image src="/images/icon/right1.png"></image>
     </view>
-  </view>
+  </view> -->
   <view class="mine_list_item" bindtap='onPhone'>
     <view class="mine_list_item_v1">
       <image src="/images/mine/kefu.png"></image>

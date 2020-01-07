@@ -39,7 +39,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 17,
+			"current": 20,
 			"list": [
 				{
 					"id": -1,
@@ -151,6 +151,28 @@
 					"id": -1,
 					"name": "pages/address-list/index",
 					"pathName": "pages/address-list/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/order-list/index",
+					"pathName": "pages/order-list/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 19,
+					"name": "pages/pay-success/index",
+					"pathName": "pages/pay-success/index",
+					"query": "num=100",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/address-add/index",
+					"pathName": "pages/address-add/index",
+					"query": "",
 					"scene": null
 				}
 			]

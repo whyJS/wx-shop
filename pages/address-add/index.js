@@ -38,10 +38,10 @@ Page({
 
 
     var that = this;
-    if (wx.getStorageSync('global_cityData')) {
-      var cityArray = wx.getStorageSync('global_cityData');
-      var cityArrayCode = wx.getStorageSync('global_cityDataCode');
-    } else {
+    // if (wx.getStorageSync('global_cityData')) {
+    //   var cityArray = wx.getStorageSync('global_cityData');
+    //   var cityArrayCode = wx.getStorageSync('global_cityDataCode');
+    // } else {
       //定义三列空数组
       var cityArray = [
         [],
@@ -78,29 +78,41 @@ Page({
       }
 
       
-      wx.setStorageSync('global_cityData', cityArray);
-      wx.setStorageSync('global_cityDataCode', cityArrayCode);
-    }
+    //   wx.setStorageSync('global_cityData', cityArray);
+    //   wx.setStorageSync('global_cityDataCode', cityArrayCode);
+    // // }
+    // console.log("********")
     console.log(cityArray)
     console.log(cityArrayCode)
-    that.setData({
-      cityArray: cityArray,
-      cityArrayCode: cityArrayCode
-    });
+    this.data.cityArray = cityArray
+    this.data.cityArrayCode = cityArrayCode
+    // that.setData({
+    //   cityArray: cityArray,
+    //   cityArrayCode: cityArrayCode
+    // });
   },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
+    console.log('*****')
     console.log(this.data)
+    this.setData({
+      cityArray: this.data.cityArray,
+      cityArrayCode: this.data.cityArrayCode
+    });
+
   },
 
   /**
    * 生命周期函数--监听页面显示
    */
-  onShow: function () {
-
+  onShow: function () { 
+    this.setData({
+      cityArray: this.data.cityArray,
+      cityArrayCode: this.data.cityArrayCode
+    });
   },
 
 
@@ -194,10 +206,11 @@ Page({
     var list1 = []; //存放第二列数据，即市的列
     var list2 = []; //存放第三列数据，即区的列
     var list1Code = []; //存放第二列数据，即市的列
-    var list1Code = []; //存放第三列数据，即区的列
+    var list2Code = []; //存放第三列数据，即区的列
 
 
     var citysIndex = [];
+    console.log(e)
     //主要是注意地址文件中的字段关系，省、市、区关联的字段有 sheng、di、level
     switch (e.detail.column) {
       case 0:
@@ -251,13 +264,61 @@ Page({
         var ssq = cityArray[0][that.data.citysIndex[0]] + list1[that.data.citysIndex[1]] + list2[e.detail.value] + '';
         break;
     }
+
+
+    switch (e.detail.column) {
+      case 0:
+        //滑动左列
+        for (let i = 0, len = arrays.length; i < len; i++) {
+          if (arrays[i]['code'] == cityArrayCode[0][e.detail.value]) {
+            var shengCode = arrays[i]['sheng'];
+          }
+          if (arrays[i]['sheng'] == sheng && arrays[i]['level'] == 2) {
+            list1Code.push(arrays[i]['code']);
+          }
+          if (arrays[i]['sheng'] == sheng && arrays[i]['level'] == 3 && arrays[i]['di'] == arrays[1]['di']) {
+            list2Code.push(arrays[i]['code']);
+          }
+        }
+
+        that.setData({
+          global_sheng_code: sheng
+        });
+        break;
+      case 1:
+        //滑动中列
+        var diCode;
+        var shengCode = that.data.global_sheng_code;
+        list1Code = cityArrayCode[1];
+        for (let i = 0, len = arrays.length; i < len; i++) {
+          if (arrays[i]['code'] == cityArrayCode[1][e.detail.value]) {
+            diCode = arrays[i]['di'];
+          }
+        }
+        for (let i = 0, len = arrays.length; i < len; i++) {
+          if (arrays[i]['sheng'] == sheng && arrays[i]['level'] == 3 && arrays[i]['di'] == diCode) {
+            list2Code.push(arrays[i]['code']);
+          }
+        }
+        
+
+        break;
+      case 2:
+        //滑动右列
+        list1Code = cityArrayCode[1];
+        list2Code = cityArrayCode[2];
+        break;
+    }
     console.log(citysIndex)
     that.setData({
       "cityArray[1]": list1,//重新赋值中列数组，即联动了市
       "cityArray[2]": list2,//重新赋值右列数组，即联动了区
+      "cityArrayCode[1]": list1Code,//重新赋值中列数组，即联动了市
+      "cityArrayCode[2]": list2Code,//重新赋值右列数组，即联动了区
       citysIndex: citysIndex,//更新索引
       ssq: ssq,//获取选中的省市区
     });
+    console.log(this.data)
   },
   _api_add(){
     addressModel.GetAddAddress({
