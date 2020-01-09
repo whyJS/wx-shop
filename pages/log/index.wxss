@@ -23,9 +23,21 @@
     color: #9d9d9d;
     margin-top: 40rpx;
 }
- 
+ .bottomWrapper{
+   display: flex;
+   align-items: center;
+ }
 .bottom {
     border-radius: 80rpx;
-    margin: 70rpx 50rpx;
+    margin: 70rpx 20rpx;
     font-size: 35rpx;
+    width: 50%;
+}
+.bottom1{
+  border: 0px solid #fff;
+  background: gray;
+  text-align: center;
+  height: 86rpx;
+  line-height: 86rpx;
+  color: #fff;
 }

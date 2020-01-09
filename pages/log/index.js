@@ -47,9 +47,10 @@ Page({
 
   bindBackView() {
     if (getCurrentPages().length > 1) {
-      wx.switchTab({
-        url: '/pages/index/index'
-      })
+      // wx.switchTab({
+      //   url: '/pages/index/index'
+      // })
+      wx.navigateBack()
     } else {
       wx.switchTab({
         url: '/pages/index/index'
@@ -70,9 +71,16 @@ Page({
         }).then((res)=>{
           wx.setStorageSync('_token', res.data)
           this.bindBackView()
+          wx.setStorageSync('_resert', '')
+          getApp().globalData._resert = ""
+          
         })
       }
     });
+  },
+  onBack(){
+    wx.navigateBack()
+    // getApp().globalData._resert = ""
   },
 
   /**
@@ -94,7 +102,7 @@ Page({
    */
   onHide: function () {
     console.log('清空')
-    wx.setStorageSync('_resert', '')
+    // wx.setStorageSync('_resert', '')
   },
 
   /**
