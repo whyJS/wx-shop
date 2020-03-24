@@ -33,11 +33,13 @@ class HTTP{
       success: (res) => {
         const code = res.statusCode.toString()
         console.log(res.data.code)
-        
+        console.log('asasasas')
+        console.log(getApp().globalData)
         if(res.data.code == '9999'){
-          if (_resert){
+          if (getApp().globalData._resert === "已有"){
             return
           }
+          getApp().globalData._resert ="已有"
           wx.setStorageSync('_resert', '已有')
           wx.navigateTo({
             url: '/pages/log/index',
