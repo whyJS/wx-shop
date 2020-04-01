@@ -35,10 +35,12 @@ Page({
       this.data.groupCode = 'kj'
       this._api_all('shkj', 'kj')
     // }
-
-
-
-
+  },
+  /**
+  * 生命周期函数--监听页面显示
+  */
+  onShow: function (options) {
+    this._api_list()
   },
   // 左侧点击
   onLeft(e) {
@@ -174,6 +176,20 @@ Page({
         })
       }
     })
-  }
+  },
+
+  // 购物车列表
+  _api_list() {
+    goodsModel.GetCarList().then((res) => {
+      if (res.result == 200) {
+        wx.setTabBarBadge({
+          index: 2,
+          text: `${res.data.num}`
+        })
+      }
+
+
+    })
+  },
 
 })

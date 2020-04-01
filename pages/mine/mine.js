@@ -1,4 +1,6 @@
 // pages/mine/mine.js
+import { GoodsModel } from '../../models/goods.js'
+const goodsModel = new GoodsModel()
 Page({
 
   /**
@@ -25,8 +27,8 @@ Page({
   /**
    * 生命周期函数--监听页面显示
    */
-  onShow: function() {
-
+  onShow: function () {
+    this._api_list()
   },
 
   /**
@@ -66,13 +68,26 @@ Page({
 
   // 我的地址
   onAddress() {
-    
+    let token = wx.getStorageSync('_token')
+    if (token.length < 1) {
+      wx.navigateTo({
+        url: '/pages/log/index',
+      })
+      return
+    }
     wx.navigateTo({
       url: '/pages/address-list/index?type=1',
     })
   },
   // 全部订单
   onOrder(e) {
+    let token = wx.getStorageSync('_token')
+    if (token.length < 1) {
+      wx.navigateTo({
+        url: '/pages/log/index',
+      })
+      return
+    }
     console.log(e)
     wx.navigateTo({
       url: `/pages/order-list/index?index=${e.currentTarget.dataset.index}`,
@@ -82,6 +97,18 @@ Page({
   onPhone(){
     wx.makePhoneCall({
       phoneNumber: '158XXXXXXXX',
+    })
+  },
+  // 购物车列表
+  _api_list() {
+    goodsModel.GetCarList().then((res) => {
+      if (res.result == 200) {
+        wx.setTabBarBadge({
+          index: 2,
+          text: `${res.data.num}`
+        })
+
+      }
     })
   }
 })

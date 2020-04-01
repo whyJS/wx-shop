@@ -1,6 +1,8 @@
 // pages/index/index.js
 import { baidu_key } from '../../config.js'
 import { HomeModel } from '../../models/home.js'
+import { GoodsModel } from '../../models/goods.js'
+const goodsModel = new GoodsModel()
 const homeModel = new HomeModel()
 Page({
 
@@ -60,6 +62,7 @@ Page({
     // }
     this._api_banner()
     this._api_fruits()
+    this._api_list()
   },
   /**
    * 页面相关事件处理函数--监听用户下拉动作
@@ -257,5 +260,19 @@ Page({
       }
 
     })
-  }
+  },
+
+  // 购物车列表
+  _api_list() {
+    goodsModel.GetCarList().then((res) => {
+      if (res.result == 200) {
+        wx.setTabBarBadge({
+          index: 2,
+          text: `${res.data.num}`
+        })
+      } 
+
+
+    })
+  },
 })

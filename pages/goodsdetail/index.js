@@ -28,6 +28,15 @@ Page({
 
   // 立即购买
   onOrder(){
+    let token = wx.getStorageSync('_token')
+    if (token.length < 1) {
+      wx.navigateTo({
+        url: '/pages/log/index',
+      })
+      return
+    }
+
+
     let goods = this.data.goods
     goods.num = 1
     goods.goodsImg = goods.bigImg
@@ -40,6 +49,7 @@ Page({
   },
   // 跳转创建订单页面
   onFruits(){
+    
     wx.navigateTo({
       url: '/pages/order-created/index'
     })
@@ -48,6 +58,14 @@ Page({
 
   //添加购物车
   onShopCar() {
+    let token = wx.getStorageSync('_token')
+    if (token.length < 1) {
+      wx.navigateTo({
+        url: '/pages/log/index',
+      })
+      return
+    }
+
     goodsModel.SetAddCar({
       goodsId: this.data.goods.goodsId,
       num: 1

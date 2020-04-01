@@ -138,6 +138,16 @@ Page({
 
   // 去结算
   onJieSuan(){
+    let token = wx.getStorageSync('_token')
+    if (token.length<1){
+      wx.navigateTo({
+        url: '/pages/log/index',
+      })
+      return
+    }
+   
+
+
     let arr = []
     this.data.list.map((i)=>{
       if(i.show){
@@ -177,6 +187,10 @@ Page({
   _api_list(){
     goodsModel.GetCarList().then((res)=>{
       if (res.result == 200) {
+        wx.setTabBarBadge({
+          index: 2,
+          text: `${res.data.num}`
+        })
         if (res.data.goodsList == null){
           res.data.goodsList = []
         }
