@@ -81,7 +81,8 @@ color:rgba(102,102,102,1);
 .nav_left .nav_left_items.active{  
   border-bottom: 3rpx solid #eee; 
    background: #fff;
-   color: #F1302E;   
+   color: #333;
+   /* font-weight: 900;    */
 }  
 .nav_left .nav_left_items2_wrapper.active .nav_left_items2{  
   border-bottom: 1rpx solid #eee; 
