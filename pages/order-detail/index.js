@@ -102,16 +102,73 @@ Page({
 
   //微信支付
   onOrder(){
-    wx.showModal({
-      title: '提示',
-      content: '支付尚未开通，敬请期待',
-      success(res) {
-        if (res.confirm) {
+    // wx.showModal({
+    //   title: '提示',
+    //   content: '支付尚未开通，敬请期待',
+    //   success(res) {
+    //     if (res.confirm) {
 
-        } else if (res.cancel) {
-          console.log('用户点击取消')
-        }
-      }
+    //     } else if (res.cancel) {
+    //       console.log('用户点击取消')
+    //     }
+    //   }
+    // })
+
+    orderModel.payGoodsOrder({
+      orderId: this.data.id
+    }).then((r) => {
+      console.log(r)
+      wx.requestPayment(
+        {
+          'timeStamp': r.data.timeStamp,
+          'nonceStr': r.data.nonceStr,
+          'package': r.data.prepayPackage,
+          'signType': 'MD5',
+          'paySign': r.data.paySign,
+          'success': function (ee) {
+            wx.showToast({
+              title: '支付成功',
+              icon: 'success',
+              duration: 3000
+            });
+            // wx.showModal({
+            //   title: '提示',
+            //   content: '支付成功',
+            //   success(res) {
+            //     if (res.confirm) {
+            //       wx.redirectTo({
+            //         url: `/pages/pay-success/index`
+            //       })
+            //     } else if (res.cancel) {
+            //       console.log('用户点击取消')
+            //     }
+            //   }
+            // })
+
+          },
+          'fail': function (res) {
+            if (res.errMsg == 'requestPayment:fail cancel') {
+              wx.showToast({
+                title: '您已取消支付',
+                icon: 'none',
+                duration: 3000
+              });
+
+            } else {
+              console.log('res.errMsg');
+              wx.showToast({
+                title: '支付失败',
+                icon: 'none',
+                duration: 3000
+              });
+
+            }
+          },
+          'complete': function (res) {
+            console.log(res)
+            console.log('结束')
+          }
+        })
     })
   }
 })

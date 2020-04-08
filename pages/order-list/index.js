@@ -135,25 +135,25 @@ Page({
       return 10
     }
   },
-  //支付
-  payOrder(){
-    console.log('asasas')
-    wx.showModal({
-      title: '提示',
-      content: '支付尚未开通，敬请期待',
-      success(res) {
-        if (res.confirm) {
+  //支付e
+  payOrder(e){
+    // console.log('asasas')
+    // wx.showModal({
+    //   title: '提示',
+    //   content: '支付尚未开通，敬请期待',
+    //   success(res) {
+    //     if (res.confirm) {
           
-        } else if (res.cancel) {
-          console.log('用户点击取消')
-        }
-      }
-    })
-    return
-
-
+    //     } else if (res.cancel) {
+    //       console.log('用户点击取消')
+    //     }
+    //   }
+    // })
+    // return
+    let res = e.currentTarget.dataset.val
+console.log(res)
     orderModel.payGoodsOrder({
-      orderId: res.data
+      orderId: res.orderId
     }).then((r) => {
       console.log(r)
       wx.requestPayment(

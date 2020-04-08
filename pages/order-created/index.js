@@ -119,25 +119,6 @@ Page({
       kuaidiPrice:0
     }).then((res) => {
       if (res.result == 200) {
-        wx.showToast({
-          title: '订单创建成功',
-          icon: 'none',
-          duration: 2000
-        })
-        wx.showModal({
-          title: '提示',
-          content: '未能成功支付，敬请期待',
-          success(res) {
-            if (res.confirm) {
-              // wx.switchTab({
-              //   url: '/pages/mine/mine',
-              // })
-            } else if (res.cancel) {
-              console.log('用户点击取消')
-            }
-          }
-        })
-        return
         orderModel.payGoodsOrder({
           orderId:res.data
         }).then((r)=>{
@@ -194,6 +175,30 @@ Page({
                }
             })
         })
+
+
+        return
+        wx.showToast({
+          title: '订单创建成功',
+          icon: 'none',
+          duration: 2000
+        })
+        wx.showModal({
+          title: '提示',
+          content: '未能成功支付，敬请期待',
+          success(res) {
+            if (res.confirm) {
+              // wx.switchTab({
+              //   url: '/pages/mine/mine',
+              // })
+
+            } else if (res.cancel) {
+              console.log('用户点击取消')
+            }
+          }
+        })
+        return
+        
 
         // this._api_list()
         // wx.navigateTo({
