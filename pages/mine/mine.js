@@ -104,7 +104,7 @@ Page({
     goodsModel.GetCarList().then((res) => {
       if (res.result == 200) {
         wx.setTabBarBadge({
-          index: 2,
+          index: 1,
           text: `${res.data.num}`
         })
 

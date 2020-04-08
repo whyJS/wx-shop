@@ -242,7 +242,7 @@ Page({
 
   //果蔬食品接口
   _api_fruits() {
-    homeModel.GetFruitsList({
+    homeModel.GetFruitsListNew({
       pageNum:1,
       pageSize:4
     }).then((res) => {
@@ -267,7 +267,7 @@ Page({
     goodsModel.GetCarList().then((res) => {
       if (res.result == 200) {
         wx.setTabBarBadge({
-          index: 2,
+          index: 1,
           text: `${res.data.num}`
         })
       } 

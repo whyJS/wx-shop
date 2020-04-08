@@ -34,7 +34,7 @@
       </navigator>
     </view>
     <view class="d2">
-      <navigator url="/pages/category/category" hover-class="navigator-hover">
+      <navigator url="/pages/category/category?title=创业空间&pcode=cykj&groupCode=kj" hover-class="navigator-hover">
         <image src="https://tyigou.haoshichengduo.com/index_url_2.png"></image>
       </navigator>
     </view>

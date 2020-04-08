@@ -100,8 +100,10 @@ Page({
         this.setData({
           leftList: leftList
         })
-
-        this._api_all_two(leftList[0].code, groupCode, 0)
+        if (leftList.length>0){
+          this._api_all_two(leftList[0].code, groupCode, 0)
+        }
+        
       } else {
         wx.showToast({
           title: res.msg,

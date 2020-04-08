@@ -37,12 +37,7 @@
         "iconPath": "/images/tab/tab1_1.png",
         "text": "首页"
       },
-      {
-        "pagePath": "pages/rank/rank",
-        "selectedIconPath": "/images/tab/tab2_2.png",
-        "iconPath": "/images/tab/tab2_1.png",
-        "text": "排行榜"
-      },
+      
       {
         "pagePath": "pages/shopcar/shopcar",
         "selectedIconPath": "/images/tab/tab3_2.png",

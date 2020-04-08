@@ -31,15 +31,18 @@ Page({
       // wx.setNavigationBarTitle({
       //   title: options.title
       // })
-      this.data.pcode = 'shkj'
-      this.data.groupCode = 'kj'
-      this._api_all('shkj', 'kj')
+      // this.data.pcode = 'shkj'
+      // this.data.groupCode = 'kj'
+      // this._api_all('shkj', 'kj')
     // }
   },
   /**
   * 生命周期函数--监听页面显示
   */
   onShow: function (options) {
+    this.data.pcode = 'shkj'
+    this.data.groupCode = 'kj'
+    this._api_all('shkj', 'kj')
     this._api_list()
   },
   // 左侧点击

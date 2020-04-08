@@ -23,6 +23,14 @@ class HomeModel extends HTTP {
     })
   }
 
+  // 获取果蔬食品接口 首页
+  GetFruitsListNew(data) {
+    console.log(data)
+    return this.request({
+      url: `/shop/list/recommendShop?pageNum=${data.pageNum}&pageSize=${data.pageSize}`,
+    })
+  }
+
   
 
 }
