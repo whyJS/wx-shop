@@ -19,7 +19,7 @@
 <view class="money">
   <view class="money_v1">
     <text class="t1">￥{{goods.realPrice}}</text>
-    <text class="t2">￥{{godds.oriPrice}}</text>
+    <text class="t2">￥{{goods.oriPrice}}</text>
   </view>
   <view class="money_v2">
     <text> 库存：{{goods.totalNum}}</text>
